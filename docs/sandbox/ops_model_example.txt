@@ -1,0 +1,117 @@
+Header
+  - name: Operations
+  - ldd_version_id: 1.0.0.0
+  - dictionary_type: Discipline
+  - full_name: Sophia Conover
+  - steward_id: ops
+  - namespace_id: ops
+  - comment: The purpose of the Ops LDD is to define operational and supplemental metadata for PDS4 products, including access, file, processing provenance, lifecycle, validation, and usability metadata that supports registry, API, search, and delivery services but does not belong in archival product labels.
+  - last_modification_date_time: 2026-05-27
+
+
+Operation_Metadata --- The class Operation_Metadata is the top-level class for operational and supplemental metadata associated with a PDS4 product.
+  - label_file_info: File_Info [0..1]
+  - data_file_info: File_Info [0..*]
+  - access_info: Access_Info [0..*]
+  - harvest_provenance: Harvest_Provenance [0..1]
+  - lifecycle_status: Lifecycle_Status [0..*]
+  - validation_assessment: Validation_Assessment [0..*]
+
+
+File_Info --- The class File_Info describes deployed or operational characteristics of a PDS4 label or data file.
+  - creation_date_time: ASCII_Date_Time [0..1]
+  - file_name: ASCII_File_Name [1]
+  - file_ref: ASCII_AnyURI [0..1]
+  - file_size: ASCII_NonNegative_Integer [0..1]
+  - md5_checksum: ASCII_MD5_Checksum [0..1]
+  - mime_type: ASCII_Short_String_Collapsed [0..1]
+  - compression_algorithm: ASCII_Short_String_Collapsed [0..1]
+  - file_ref_available: ASCII_Boolean [0..1]
+
+
+Access_Info --- The class Access_Info describes an operational access endpoint or representation associated with a PDS4 product or file.
+  - access_uri: ASCII_AnyURI [0..1]
+  - access_method: ASCII_Short_String_Collapsed [0..1]
+  	Permissible values:
+  	-- https --- The access method uses HTTPS.
+  	-- s3 --- The access method uses an Amazon S3 URI or compatible object-storage URI.
+  	-- native --- The access method uses a native or system-local path.
+  	-- internal --- The access method is intended for internal operational use.
+  
+  - product_representation_type: ASCII_Short_String_Collapsed [0..1]
+    Permissible values:
+    - browse --- The access endpoint provides a browse or preview representation.
+    - download --- The access endpoint provides a downloadable representation.
+    - compressed --- The access endpoint provides a compressed representation.
+    - cloud-native --- The access endpoint provides a cloud-native representation.
+    - alternate --- The access endpoint provides an alternate representation.
+		- primary --- The access endpoint provides the primary representation.
+
+  - is_user_visible: ASCII_Boolean [0..1]
+  - authorization_required: ASCII_Boolean [0..1]
+  - access_note: ASCII_Text_Preserved [0..1]
+
+
+Harvest_Provenance --- The class Harvest_Provenance captures operational provenance for registry harvesting activities associated with a product.
+  - harvest_id: ASCII_Short_String_Collapsed [0..1]
+  - harvest_date_time: ASCII_Date_Time [0..1]
+  - harvest_version: ASCII_Short_String_Collapsed [0..1]
+  - node_name: ASCII_Short_String_Collapsed [0..1]
+  - harvest_source: ASCII_Short_String_Collapsed [0..1]
+  - harvest_job_identifier: ASCII_Short_String_Collapsed [0..1]
+  - harvest_profile_identifier: ASCII_Short_String_Collapsed [0..1]
+  - registry_id: ASCII_AnyURI [0..1]
+  - registry_version: ASCII_Short_String_Collapsed [0..1]
+  - registry_sweepers_ancestry_version: ASCII_NonNegative_Integer [0..1]
+  - registry_sweepers_repairkit_version: ASCII_NonNegative_Integer [0..1]
+  - parent_bundle_identifier: ASCII_LID [0..1]
+  - parent_collection_identifier: ASCII_LID [0..1]
+  - derived_from_identifier: ASCII_LID [0..*]
+  - provenance_note: ASCII_Text_Preserved [0..1]
+
+
+Lifecycle_Status --- The class Lifecycle_Status describes the current operational state of a product within a defined workflow phase, such as ingest, validation, review, release, publication, embargo, migration, or retirement.
+  - lifecycle_phase: ASCII_Short_String_Collapsed [0..1]
+    Permissible values:
+    - planning
+    - ingest
+    - validation
+    - review
+		- stewardship
+    - migration
+   	- superseded    
+
+  - lifecycle_status: ASCII_Short_String_Collapsed [0..1]
+    Permissible values:
+    - pending
+    - in_progress
+    - blocked
+    - complete
+    - failed
+    - approved
+    - rejected
+    - active
+    - inactive
+
+  - status_date_time: ASCII_Date_Time [0..1]
+  - status_message: ASCII_Text_Preserved [0..1]
+
+
+Validation_Assessment --- The class Validation_Assessment captures the result of validating a product against a specified information model, schema, schematron, or validation tool context.
+  - validation_state: ASCII_Short_String_Collapsed [0..1]
+    Permissible values:
+    - valid
+    - invalid
+    - warning
+    - unknown
+    - not_tested
+
+  - validated_against_im_version: ASCII_Short_String_Collapsed [0..1]
+  - validated_against_ldd_version: ASCII_Short_String_Collapsed [0..*]
+  - validation_context: ASCII_Short_String_Collapsed [0..1]
+  - validator_name: ASCII_Short_String_Collapsed [0..1]
+  - validator_version: ASCII_Short_String_Collapsed [0..1]
+  - validation_date_time: ASCII_Date_Time [0..1]
+  - message_code: ASCII_Short_String_Collapsed [0..1]
+  - message_text: ASCII_Text_Preserved [0..1]
+  - is_user_actionable: ASCII_Boolean [0..1]
