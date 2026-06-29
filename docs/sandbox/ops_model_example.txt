@@ -10,14 +10,31 @@ Header
 
 
 Operation_Metadata --- The class Operation_Metadata is the top-level class for operational and supplemental metadata associated with a PDS4 product.
+  - stewardship_info: Stewardship_Info [0..1]
   - label_file_info: File_Info [0..1]
   - data_file_info: File_Info [0..*]
   - access_info: Access_Info [0..*]
-  - harvest_provenance: Harvest_Provenance [0..1]
+  - processing_provenance: Processing_Provenance [0..1]
   - lifecycle_status: Lifecycle_Status [0..*]
   - validation_assessment: Validation_Assessment [0..*]
 
+Stewardship_Info --- The class Stewardship_Info describes the organizations responsible for producing and stewarding a product.
 
+  - producer: ASCII_Short_String_Collapsed [0..*]
+    --- The organization or entity that produced the product.
+
+  - steward: ASCII_Short_String_Collapsed [0..*]
+    --- The organization or entity responsible for stewardship, curation, or long-term management.
+
+  - steward_type: ASCII_Short_String_Collapsed [0..*]
+    Permissible values:
+    - pds_node --- A PDS discipline or support node.
+    - organization --- A non-PDS organization or institution.
+    - agency --- A government or space agency.
+
+  - stewardship_note: ASCII_Text [0..1]
+    --- Free-text notes describing stewardship responsibilities, transfers, shared stewardship, or other relevant context.
+    
 File_Info --- The class File_Info describes deployed or operational characteristics of a PDS4 label or data file.
   - creation_date_time: ASCII_Date_Time [0..1]
   - file_name: ASCII_File_Name [1]
@@ -52,11 +69,10 @@ Access_Info --- The class Access_Info describes an operational access endpoint o
   - access_note: ASCII_Text_Preserved [0..1]
 
 
-Harvest_Provenance --- The class Harvest_Provenance captures operational provenance for registry harvesting activities associated with a product.
+Processing_Provenance --- The class Processing_Provenance captures operational provenance associated with harvest and registry activities associated with a product.
   - harvest_id: ASCII_Short_String_Collapsed [0..1]
   - harvest_date_time: ASCII_Date_Time [0..1]
   - harvest_version: ASCII_Short_String_Collapsed [0..1]
-  - node_name: ASCII_Short_String_Collapsed [0..1]
   - harvest_source: ASCII_Short_String_Collapsed [0..1]
   - harvest_job_identifier: ASCII_Short_String_Collapsed [0..1]
   - harvest_profile_identifier: ASCII_Short_String_Collapsed [0..1]
@@ -70,48 +86,56 @@ Harvest_Provenance --- The class Harvest_Provenance captures operational provena
   - provenance_note: ASCII_Text_Preserved [0..1]
 
 
-Lifecycle_Status --- The class Lifecycle_Status describes the current operational state of a product within a defined workflow phase, such as ingest, validation, review, release, publication, embargo, migration, or retirement.
+Lifecycle_Status --- The class Lifecycle_Status captures the current operational position of a product within a defined data management lifecycle. The lifecycle phase identifies where the product or resource is in the workflow sequence, while the lifecycle status identifies the state of activity within that phase.
+
   - lifecycle_phase: ASCII_Short_String_Collapsed [0..1]
     Permissible values:
-    - planning
-    - ingest
-    - validation
-    - review
-		- stewardship
-    - migration
-   	- superseded    
+    - preparation --- The product is being planned, generated, documented, packaged, or otherwise prepared for archive or operational handling.
+    - ingest --- The product is being transferred, harvested, loaded, registered, or accepted into an operational system.
+    - review --- The product is undergoing operational, technical, peer, or approval review.
+    - release --- The product is being prepared for or made available through an operational release workflow.
+
 
   - lifecycle_status: ASCII_Short_String_Collapsed [0..1]
     Permissible values:
-    - pending
-    - in_progress
-    - blocked
-    - complete
-    - failed
-    - approved
-    - rejected
-    - active
-    - inactive
+    - pending --- The lifecycle phase has not yet started.
+    - in_progress --- The lifecycle phase is currently underway.
+    - blocked --- The lifecycle phase cannot proceed until an issue, dependency, or decision is resolved.
+    - complete --- The lifecycle phase has been completed.
+    - failed --- The lifecycle phase did not complete successfully.
+    - superseded --- The product has been replaced by a newer version, successor, or operational replacement.
 
   - status_date_time: ASCII_Date_Time [0..1]
+
   - status_message: ASCII_Text_Preserved [0..1]
 
+Validation_Assessment --- The class Validation_Assessment captures the result of validating a product against a specified information model, schema, schematron, local data dictionary, or validation tool.
 
-Validation_Assessment --- The class Validation_Assessment captures the result of validating a product against a specified information model, schema, schematron, or validation tool context.
   - validation_state: ASCII_Short_String_Collapsed [0..1]
     Permissible values:
-    - valid
-    - invalid
-    - warning
-    - unknown
-    - not_tested
+    - passed --- The product or resource passed the validation assessment.
+    - failed --- The product or resource failed the validation assessment.
+    - passed_with_warnings --- The product or resource passed validation but produced one or more warnings.
+    - not_tested --- The product or resource has not been validated.
+    - unknown --- The validation result is not known.
 
   - validated_against_im_version: ASCII_Short_String_Collapsed [0..1]
+    The version of the information model against which the product or resource was validated.
+
   - validated_against_ldd_version: ASCII_Short_String_Collapsed [0..*]
-  - validation_context: ASCII_Short_String_Collapsed [0..1]
+    The version(s) of any local data dictionaries against which the product or resource was validated.
+
   - validator_name: ASCII_Short_String_Collapsed [0..1]
+    The name of the validation tool, service, or application used to perform the validation assessment.
+
   - validator_version: ASCII_Short_String_Collapsed [0..1]
+    The version of the validation tool, service, or application used to perform the validation assessment.
+
   - validation_date_time: ASCII_Date_Time [0..1]
-  - message_code: ASCII_Short_String_Collapsed [0..1]
-  - message_text: ASCII_Text_Preserved [0..1]
-  - is_user_actionable: ASCII_Boolean [0..1]
+    The date and time at which the validation assessment was performed.
+
+  - validation_message_text: ASCII_Text_Preserved [0..*]
+    A human-readable description of a validation result, warning, or error generated during validation.
+
+  - action_required: ASCII_Boolean [0..1]
+    Indicates whether the validation assessment identified issues requiring corrective action.
