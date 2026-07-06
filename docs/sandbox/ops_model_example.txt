@@ -5,7 +5,7 @@ Header
   - full_name: Sophia Conover
   - steward_id: ops
   - namespace_id: ops
-  - comment: The purpose of the Ops LDD is to define operational and supplemental metadata for PDS4 products, including access, file, processing provenance, lifecycle, validation, and usability metadata that supports registry, API, search, and delivery services but does not belong in archival product labels.
+  - comment: The purpose of the Ops LDD is to define operational and supplemental metadata for PDS4 products, including file, access, processing provenance, lifecycle, validation, and usability metadata that supports registry, API, search, and delivery services but does not belong in archival product labels.
   - last_modification_date_time: 2026-05-27
 
 
@@ -43,7 +43,6 @@ File_Info --- The class File_Info describes deployed or operational characterist
   - md5_checksum: ASCII_MD5_Checksum [0..1]
   - mime_type: ASCII_Short_String_Collapsed [0..1]
   - compression_algorithm: ASCII_Short_String_Collapsed [0..1]
-  - file_ref_available: ASCII_Boolean [0..1]
 
 
 Access_Info --- The class Access_Info describes an operational access endpoint or representation associated with a PDS4 product or file.
@@ -69,7 +68,7 @@ Access_Info --- The class Access_Info describes an operational access endpoint o
   - access_note: ASCII_Text_Preserved [0..1]
 
 
-Processing_Provenance --- The class Processing_Provenance captures operational provenance associated with harvest and registry activities associated with a product.
+Processing_Provenance --- The class Processing_Provenance captures operational provenance generated during harvest and registry activities for a product.
   - harvest_id: ASCII_Short_String_Collapsed [0..1]
   - harvest_date_time: ASCII_Date_Time [0..1]
   - harvest_version: ASCII_Short_String_Collapsed [0..1]
@@ -86,7 +85,7 @@ Processing_Provenance --- The class Processing_Provenance captures operational p
   - provenance_note: ASCII_Text_Preserved [0..1]
 
 
-Lifecycle_Status --- The class Lifecycle_Status captures the current operational position of a product within a defined data management lifecycle. The lifecycle phase identifies where the product or resource is in the workflow sequence, while the lifecycle status identifies the state of activity within that phase.
+Lifecycle_Status --- The class Lifecycle_Status captures the current operational state of a product within its lifecycle. The lifecycle phase identifies where the product is in the workflow sequence, while the lifecycle status identifies the state of activity within that phase.
 
   - lifecycle_phase: ASCII_Short_String_Collapsed [0..1]
     Permissible values:
