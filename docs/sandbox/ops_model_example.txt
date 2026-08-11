@@ -6,7 +6,7 @@ Header
   - steward_id: ops
   - namespace_id: ops
   - comment: The purpose of the Ops LDD is to define operational and supplemental metadata for PDS4 products, including file, access, processing provenance, lifecycle, validation, and usability metadata that supports registry, API, search, and delivery services but does not belong in archival product labels.
-  - last_modification_date_time: 2026-08-03
+  - last_modification_date_time: 2026-08-10
 
 Operation_Metadata --- The class Operation_Metadata is the top-level class for operational and supplemental metadata associated with a PDS4 product.
   - stewardship_info: Stewardship_Info [0..1]
@@ -47,7 +47,9 @@ File_Info --- The class File_Info describes deployed or operational characterist
 Access_Info --- The class Access_Info describes an operational access endpoint or representation associated with a file.
   - access_uri: ASCII_AnyURI [1]
   - access_available: ASCII_Boolean [0..1]
-  --- Indicates whether the resource at the access endpoint is currently available.
+  	--- Indicates whether the resource at the access endpoint is currently available.
+  - authorization_required: ASCII_Boolean [0..1]
+	--- Indicates whether authorization is required to access the resource at the endpoint.
   - access_method: ASCII_Short_String_Collapsed [0..1]
   	Permissible values:
   	- https --- The access method uses HTTPS.
@@ -65,8 +67,6 @@ Access_Info --- The class Access_Info describes an operational access endpoint o
 	- primary --- The access endpoint provides the primary representation.
 
   - compression_algorithm: ASCII_Short_String_Collapsed [0..1]
-  - is_user_visible: ASCII_Boolean [0..1]
-  - authorization_required: ASCII_Boolean [0..1]
   - comment: pds:comment [0..1]
 
 Product_Ancestry --- The class Product_Ancestry describes aggregation or membership relationships between a PDS4 product and its parent aggregate products.
@@ -92,9 +92,6 @@ Version_Status --- The class Version_Status identifies the operational standing 
     - current --- The product version is the current version and has not been superseded or withdrawn.
     - superseded --- The product version has been replaced by a later version and is no longer the current version.
     - withdrawn --- The product version has been withdrawn from general use or distribution.
-
-  - preferred_flag: ASCII_Boolean [0..1]
-	- Indicates whether the product version is designated as the preferred version for use.
 
   - version_status_date_time: ASCII_Date_Time [0..1]
     --- The date and time at which the version status was assigned or last updated.
