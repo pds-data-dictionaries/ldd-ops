@@ -6,7 +6,7 @@ Header
   - steward_id: ops
   - namespace_id: ops
   - comment: The purpose of the Ops LDD is to define operational and supplemental metadata for PDS4 products, including file, access, processing provenance, lifecycle, validation, and usability metadata that supports registry, API, search, and delivery services but does not belong in archival product labels.
-  - last_modification_date_time: 2026-08-10
+  - last_modification_date_time: 2026-08-13
 
 Operation_Metadata --- The class Operation_Metadata is the top-level class for operational and supplemental metadata associated with a PDS4 product.
   - stewardship_info: Stewardship_Info [0..1]
@@ -89,7 +89,6 @@ Version_Status --- The class Version_Status identifies the operational standing 
 
   - version_status: ASCII_Short_String_Collapsed [1]
     Permissible values:
-    - current --- The product version is the current version and has not been superseded or withdrawn.
     - superseded --- The product version has been replaced by a later version and is no longer the current version.
     - withdrawn --- The product version has been withdrawn from general use or distribution.
 
