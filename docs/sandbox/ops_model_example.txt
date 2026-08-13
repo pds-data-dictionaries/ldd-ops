@@ -111,14 +111,16 @@ Processing_Provenance --- The class Processing_Provenance captures Engineering N
   - derived_from_identifier: ASCII_LID [0..*]
   - comment: pds:comment [0..1]
 
-Systems_Lifecycle_Status --- The class Systems_Lifecycle_Status captures the current operational state of a product within the Engineering Node operational workflow. The lifecycle phase identifies where the product is in the workflow, while the lifecycle status identifies the state of activity within that phase.
+Systems_Lifecycle_Status --- The class Systems_Lifecycle_Status captures the current operational state of a product within the Engineering Node operational workflow. The lifecycle phase identifies where the product is in the workflow, while the lifecycle status identifies the state of activity within that phase. When systems_lifecycle_phase = release and systems_lifecycle_status = complete, the product is publicly available online.
 
   - systems_lifecycle_phase: ASCII_Short_String_Collapsed [0..1]
     Permissible values:
     - preparation --- The product is being planned, generated, documented, packaged, or otherwise prepared for archive or operational handling.
     - ingest --- The product is being transferred, harvested, loaded, registered, or accepted into an operational system.
     - review --- The product is undergoing operational, technical, or approval review.
-    - release --- The product is being prepared for or made available through an operational release workflow.
+    - staging --- The product has been prepared for release and is staged in an operational system but is not yet publicly available online.
+    - release --- The product is being prepared for or made available through an operational release workflow. When systems_lifecycle_status = complete, the product is publicly available online.
+    - decommissioned --- The product has been taken offline and is no longer publicly available through operational systems.
 
   - systems_lifecycle_status: ASCII_Short_String_Collapsed [0..1]
     Permissible values:
@@ -139,13 +141,12 @@ Archive_Lifecycle_Status --- The class Archive_Lifecycle_Status captures the cur
     - not_evaluated --- The product has not yet entered the evaluation process.
     - in_peer_review --- The product is currently undergoing review.
     - in_lien_resolution --- Review has identified issues or liens that are being resolved.
-    - staged --- The product has been prepared for archival release but is not yet publicly available.
-    - archived --- The product has successfully completed archive evaluation and is available through the archive.
+    - released --- The product has successfully completed archive evaluation and has been publicly released through the archive.
     - rejected --- The product did not satisfy requirements for archival acceptance.
 
   - archive_quality: ASCII_Short_String_Collapsed [0..1]
     Permissible values:
-    - certified --- The product represents the preferred or best available archive version.
+    - archived --- The product has been peer reviewed and certified for public archive release.
     - acceptable --- The product satisfies archive quality requirements.
     - needs_improvement --- The product requires additional work before meeting archive quality requirements.
     - external --- The product is not intended for formal inclusion in the PDS archive and may be maintained or made available externally to the archive.
