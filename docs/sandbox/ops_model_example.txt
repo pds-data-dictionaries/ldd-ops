@@ -44,27 +44,32 @@ File_Info --- The class File_Info describes deployed or operational characterist
   - mime_type: ASCII_Short_String_Collapsed [0..1]
   - access_info: Access_Info [0..*]
 
-Access_Info --- The class Access_Info describes an operational access endpoint or representation associated with a file.
+Access_Info --- The class Access_Info describes a URI and its access characteristics for a file. Each instance represents one URI at which the file can be accessed.
   - access_uri: ASCII_AnyURI [1]
   - access_available: ASCII_Boolean [0..1]
-  	--- Indicates whether the resource at the access endpoint is currently available.
+  	--- Indicates whether the resource at this URI is currently available.
   - authorization_required: ASCII_Boolean [0..1]
-	--- Indicates whether authorization is required to access the resource at the endpoint.
+	--- Indicates whether authorization is required to access the resource at this URI.
   - access_method: ASCII_Short_String_Collapsed [0..1]
   	Permissible values:
-  	- https --- The access method uses HTTPS.
-  	- s3 --- The access method uses an Amazon S3 URI or compatible object-storage URI.
-  	- native --- The access method uses a native or system-local path.
-  	- internal --- The access method is intended for internal operational use.
-  
-  - product_representation_type: ASCII_Short_String_Collapsed [0..1]
+  	- https --- The URI is accessed via HTTPS.
+  	- s3 --- The URI is an Amazon S3 URI or compatible object-storage URI.
+  	- native --- The URI is a native or system-local path.
+  	- internal --- The URI is intended for internal operational use only.
+
+  - representation_role: ASCII_Short_String_Collapsed [0..1]
+    --- Identifies the role of this file representation in relation to the product.
     Permissible values:
-    - browse --- The access endpoint provides a browse or preview representation.
-    - download --- The access endpoint provides a downloadable representation.
-    - compressed --- The access endpoint provides a compressed representation.
-    - cloud-native --- The access endpoint provides a cloud-native representation.
-    - alternate --- The access endpoint provides an alternate representation.
-	- primary --- The access endpoint provides the primary representation.
+    - primary --- The primary representation of the product.
+    - browse --- A browse or preview representation.
+    - alternate --- An alternate representation of the product.
+
+  - representation_profile: ASCII_Short_String_Collapsed [0..1]
+    --- Identifies the intended deployment purpose or optimization of this file representation.
+    Permissible values:
+    - delivery --- The file is optimized for user download and delivery.
+    - cloud-native --- The file is optimized for cloud-based processing and access.
+    - preservation --- The file is in a format suitable for long-term archival retention and is the designated preservation copy.
 
   - compression_algorithm: ASCII_Short_String_Collapsed [0..1]
   - comment: pds:comment [0..1]
