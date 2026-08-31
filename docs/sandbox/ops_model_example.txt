@@ -6,7 +6,7 @@ Header
   - steward_id: ops
   - namespace_id: ops
   - comment: The purpose of the Ops LDD is to define operational and supplemental metadata for PDS4 products, including file, access, processing provenance, lifecycle, validation, and usability metadata that supports registry, API, search, and delivery services but does not belong in archival product labels.
-  - last_modification_date_time: 2026-08-13
+  - last_modification_date_time: 2026-08-31
 
 Operation_Metadata --- The class Operation_Metadata is the top-level class for operational and supplemental metadata associated with a PDS4 product.
   - stewardship_info: Stewardship_Info [0..1]
@@ -27,7 +27,7 @@ Stewardship_Info --- The class Stewardship_Info describes the organizations resp
     --- The top-level organization responsible for stewardship, curation, or long-term management.
  
   - steward_sub_organization: ASCII_Short_String_Collapsed [0..*]
-    --- The organization unit within the steward organization responsible for stewardship, curation, or long-term management.
+    --- The organizational unit within the steward organization responsible for stewardship, curation, or long-term management.
 
   - comment: pds:comment [0..1]
     
@@ -104,16 +104,27 @@ Version_Status --- The class Version_Status identifies the operational standing 
 
 Processing_Provenance --- The class Processing_Provenance captures Engineering Node operational provenance generated during harvest and registry activities for a product.
   - harvest_id: ASCII_Short_String_Collapsed [0..1]
+  	--- The identifier assigned to the harvest activity associated with the product.
   - harvest_date_time: ASCII_Date_Time [0..1]
+	--- The date and time at which the product was harvested.
   - harvest_version: ASCII_Short_String_Collapsed [0..1]
+	--- The version of the harvesting software used to harvest the product.
   - harvest_source: ASCII_Short_String_Collapsed [0..1]
+	--- Identifies the source from which the product was harvested.
   - harvest_job_identifier: ASCII_Short_String_Collapsed [0..1]
+	--- The identifier assigned to the harvest job that processed the product.
   - harvest_profile_identifier: ASCII_Short_String_Collapsed [0..1]
+	--- The identifier of the harvest configuration profile used to process the product.
   - registry_id: ASCII_AnyURI [0..1]
+	--- The URI that identifies the product record in the registry.
   - registry_version: ASCII_Short_String_Collapsed [0..1]
-  - registry_sweepers_ancestry_version: ASCII_NonNegative_Integer [0..1]
-  - registry_sweepers_repairkit_version: ASCII_NonNegative_Integer [0..1]
-  - derived_from_identifier: ASCII_LID [0..*]
+	--- The version of the registry record associated with the product.
+  - registry_sweepers_ancestry_version: ASCII_Short_String_Collapsed [0..1]
+	--- The version of the Registry Sweepers ancestry process applied to the product.
+  - registry_sweepers_repairkit_version: ASCII_Short_String_Collapsed [0..1]
+	--- The version of the Registry Sweepers repair kit applied to the product.
+  - derived_from_identifier: ASCII_Short_String_Collapsed [0..*]
+	--- The identifier of a source product containing input data used in the creation of the described product. The source product may be within or outside the PDS4 Registry. External source products should be documented consistently with the PDS Source_Product_External class.
   - comment: pds:comment [0..1]
 
 Systems_Lifecycle_Status --- The class Systems_Lifecycle_Status captures the current operational state of a product within the Engineering Node operational workflow. The lifecycle phase identifies where the product is in the workflow, while the lifecycle state identifies the state of activity within that phase. When systems_lifecycle_phase = release and systems_lifecycle_state = complete, the product is publicly available online.
@@ -121,7 +132,7 @@ Systems_Lifecycle_Status --- The class Systems_Lifecycle_Status captures the cur
   - systems_lifecycle_phase: ASCII_Short_String_Collapsed [0..1]
     Permissible values:
     - preparation --- The product is being planned, generated, documented, packaged, or otherwise prepared by a data provider for submission to PDS for archive or operational handling.
-    - ingest --- The product is being transferred from a data provider to the PDS Engineering Node for acceptance, harvesting, loading, or registration in an operational system.
+    - ingest --- The product is being transferred from a data provider to the PDS for acceptance, harvesting, loading, and registration.
     - review --- The product is undergoing operational, technical, or approval review.
     - staging --- The product has been prepared for release and is staged in an operational system but is not yet publicly available online.
     - release --- The product is being prepared for or made available through an operational release workflow. When systems_lifecycle_state = complete, the product is publicly available online.
@@ -176,7 +187,7 @@ Validation_Assessment --- The class Validation_Assessment captures the result of
     - not_tested --- The product has not been validated.
     - unknown --- The validation result is not known.
 
-  - validated_against: Validated_Against [1..*]
+  - validated_against: Validated_Against [0..*]
    --- Identifies a PDS4 information model or local data dictionary namespace and version against which the product was validated.
 
   - validator_name: ASCII_Short_String_Collapsed [0..1]
