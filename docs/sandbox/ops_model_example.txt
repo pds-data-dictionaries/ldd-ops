@@ -6,135 +6,209 @@ Header
   - steward_id: ops
   - namespace_id: ops
   - comment: The purpose of the Ops LDD is to define operational and supplemental metadata for PDS4 products, including file, access, processing provenance, lifecycle, validation, and usability metadata that supports registry, API, search, and delivery services but does not belong in archival product labels.
-  - last_modification_date_time: 2026-05-27
-
+  - last_modification_date_time: 2026-08-31
 
 Operation_Metadata --- The class Operation_Metadata is the top-level class for operational and supplemental metadata associated with a PDS4 product.
   - stewardship_info: Stewardship_Info [0..1]
   - label_file_info: File_Info [0..1]
   - data_file_info: File_Info [0..*]
-  - access_info: Access_Info [0..*]
+  - product_ancestry: Product_Ancestry [0..1]
+  - version_status: Version_Status [0..1]
   - processing_provenance: Processing_Provenance [0..1]
-  - lifecycle_status: Lifecycle_Status [0..*]
+  - systems_lifecycle_status: Systems_Lifecycle_Status [0..*]
+  - archive_lifecycle_status: Archive_Lifecycle_Status  [0..*]
   - validation_assessment: Validation_Assessment [0..*]
 
 Stewardship_Info --- The class Stewardship_Info describes the organizations responsible for producing and stewarding a product.
-
   - producer: ASCII_Short_String_Collapsed [0..*]
     --- The organization or entity that produced the product.
 
-  - steward: ASCII_Short_String_Collapsed [0..*]
-    --- The organization or entity responsible for stewardship, curation, or long-term management.
+  - steward_organization: ASCII_Short_String_Collapsed [0..*]
+    --- The top-level organization responsible for stewardship, curation, or long-term management.
+ 
+  - steward_sub_organization: ASCII_Short_String_Collapsed [0..*]
+    --- The organizational unit within the steward organization responsible for stewardship, curation, or long-term management.
 
-  - steward_type: ASCII_Short_String_Collapsed [0..*]
-    Permissible values:
-    - pds_node --- A PDS discipline or support node.
-    - organization --- A non-PDS organization or institution.
-    - agency --- A government or space agency.
-
-  - stewardship_note: ASCII_Text [0..1]
-    --- Free-text notes describing stewardship responsibilities, transfers, shared stewardship, or other relevant context.
+  - comment: pds:comment [0..1]
     
 File_Info --- The class File_Info describes deployed or operational characteristics of a PDS4 label or data file.
   - creation_date_time: ASCII_Date_Time [0..1]
   - file_name: ASCII_File_Name [1]
-  - file_ref: ASCII_AnyURI [0..1]
+  -	file_role: ASCII_Short_String_Collapsed [1]
+	--- Identifies whether the file is a PDS4 label or a data file.
+	Permissible values:
+	- label --- The file is a PDS4 label file.
+	- data --- The data file described by a PDS4 label.
   - file_size: ASCII_NonNegative_Integer [0..1]
   - md5_checksum: ASCII_MD5_Checksum [0..1]
   - mime_type: ASCII_Short_String_Collapsed [0..1]
-  - compression_algorithm: ASCII_Short_String_Collapsed [0..1]
+  - access_info: Access_Info [0..*]
 
-
-Access_Info --- The class Access_Info describes an operational access endpoint or representation associated with a PDS4 product or file.
-  - access_uri: ASCII_AnyURI [0..1]
+Access_Info --- The class Access_Info describes a URI and its access characteristics for a file. Each instance represents one URI at which the file can be accessed.
+  - access_uri: ASCII_AnyURI [1]
+  - access_available: ASCII_Boolean [0..1]
+  	--- Indicates whether the resource at this URI is currently available.
+  - authorization_required: ASCII_Boolean [0..1]
+	--- Indicates whether authorization is required to access the resource at this URI.
   - access_method: ASCII_Short_String_Collapsed [0..1]
   	Permissible values:
-  	-- https --- The access method uses HTTPS.
-  	-- s3 --- The access method uses an Amazon S3 URI or compatible object-storage URI.
-  	-- native --- The access method uses a native or system-local path.
-  	-- internal --- The access method is intended for internal operational use.
-  
-  - product_representation_type: ASCII_Short_String_Collapsed [0..1]
+  	- https --- The URI is accessed via HTTPS.
+  	- s3 --- The URI is an Amazon S3 URI or compatible object-storage URI.
+  	- native --- The URI is a native or system-local path.
+  	- internal --- The URI is intended for internal operational use only.
+
+  - representation_role: ASCII_Short_String_Collapsed [0..1]
+    --- Identifies the role of this file representation in relation to the product.
     Permissible values:
-    - browse --- The access endpoint provides a browse or preview representation.
-    - download --- The access endpoint provides a downloadable representation.
-    - compressed --- The access endpoint provides a compressed representation.
-    - cloud-native --- The access endpoint provides a cloud-native representation.
-    - alternate --- The access endpoint provides an alternate representation.
-		- primary --- The access endpoint provides the primary representation.
+    - primary --- The primary representation of the product.
+    - browse --- A browse or preview representation.
+    - alternate --- An alternate representation of the product.
 
-  - is_user_visible: ASCII_Boolean [0..1]
-  - authorization_required: ASCII_Boolean [0..1]
-  - access_note: ASCII_Text_Preserved [0..1]
+  - representation_profile: ASCII_Short_String_Collapsed [0..1]
+    --- Identifies the intended deployment purpose or optimization of this file representation.
+    Permissible values:
+    - delivery --- The file is optimized for user download and delivery.
+    - cloud-native --- The file is optimized for cloud-based processing and access.
+    - preservation --- The file is in a format suitable for long-term archival retention and is the designated preservation copy.
 
+  - compression_algorithm: ASCII_Short_String_Collapsed [0..1]
+  - comment: pds:comment [0..1]
 
-Processing_Provenance --- The class Processing_Provenance captures operational provenance generated during harvest and registry activities for a product.
-  - harvest_id: ASCII_Short_String_Collapsed [0..1]
-  - harvest_date_time: ASCII_Date_Time [0..1]
-  - harvest_version: ASCII_Short_String_Collapsed [0..1]
-  - harvest_source: ASCII_Short_String_Collapsed [0..1]
-  - harvest_job_identifier: ASCII_Short_String_Collapsed [0..1]
-  - harvest_profile_identifier: ASCII_Short_String_Collapsed [0..1]
-  - registry_id: ASCII_AnyURI [0..1]
-  - registry_version: ASCII_Short_String_Collapsed [0..1]
-  - registry_sweepers_ancestry_version: ASCII_NonNegative_Integer [0..1]
-  - registry_sweepers_repairkit_version: ASCII_NonNegative_Integer [0..1]
+Product_Ancestry --- The class Product_Ancestry describes aggregation or membership relationships between a PDS4 product and its parent aggregate products.
+
   - parent_bundle_identifier: ASCII_LID [0..1]
+    --- The logical identifier of the parent bundle that contains or aggregates the product.
+
   - parent_collection_identifier: ASCII_LID [0..1]
-  - derived_from_identifier: ASCII_LID [0..*]
-  - provenance_note: ASCII_Text_Preserved [0..1]
+    --- The logical identifier of the parent collection that contains or aggregates the product.
 
+  - registry_membership_complete: ASCII_Boolean [0..1]
+	--- Indicates whether all expected members of an aggregate product are present in the registry. True indicates complete membership; false indicates that one or more expected members are missing or not linked.
 
-Lifecycle_Status --- The class Lifecycle_Status captures the current operational state of a product within its lifecycle. The lifecycle phase identifies where the product is in the workflow sequence, while the lifecycle status identifies the state of activity within that phase.
+  - registry_membership_evaluation_date_time: ASCII_Date_Time [0..1]
+    --- The date and time at which registry membership completeness was last evaluated.
 
-  - lifecycle_phase: ASCII_Short_String_Collapsed [0..1]
+  - comment: pds:comment [0..1]
+
+Version_Status --- The class Version_Status identifies the operational standing of a product version.
+
+  - version_status: ASCII_Short_String_Collapsed [1]
     Permissible values:
-    - preparation --- The product is being planned, generated, documented, packaged, or otherwise prepared for archive or operational handling.
-    - ingest --- The product is being transferred, harvested, loaded, registered, or accepted into an operational system.
-    - review --- The product is undergoing operational, technical, peer, or approval review.
-    - release --- The product is being prepared for or made available through an operational release workflow.
+    - superseded --- The product version has been replaced by a later version and is no longer the current version.
+    - withdrawn --- The product version has been withdrawn from general use or distribution.
 
+  - version_status_date_time: ASCII_Date_Time [0..1]
+    --- The date and time at which the version status was assigned or last updated.
 
-  - lifecycle_status: ASCII_Short_String_Collapsed [0..1]
+  - comment: pds:comment [0..1]
+
+Processing_Provenance --- The class Processing_Provenance captures Engineering Node operational provenance generated during harvest and registry activities for a product.
+  - harvest_id: ASCII_Short_String_Collapsed [0..1]
+  	--- The identifier assigned to the harvest activity associated with the product.
+  - harvest_date_time: ASCII_Date_Time [0..1]
+	--- The date and time at which the product was harvested.
+  - harvest_version: ASCII_Short_String_Collapsed [0..1]
+	--- The version of the harvesting software used to harvest the product.
+  - harvest_source: ASCII_Short_String_Collapsed [0..1]
+	--- Identifies the source from which the product was harvested.
+  - harvest_job_identifier: ASCII_Short_String_Collapsed [0..1]
+	--- The identifier assigned to the harvest job that processed the product.
+  - harvest_profile_identifier: ASCII_Short_String_Collapsed [0..1]
+	--- The identifier of the harvest configuration profile used to process the product.
+  - registry_id: ASCII_AnyURI [0..1]
+	--- The URI that identifies the product record in the registry.
+  - registry_version: ASCII_Short_String_Collapsed [0..1]
+	--- The version of the registry record associated with the product.
+  - registry_sweepers_ancestry_version: ASCII_Short_String_Collapsed [0..1]
+	--- The version of the Registry Sweepers ancestry process applied to the product.
+  - registry_sweepers_repairkit_version: ASCII_Short_String_Collapsed [0..1]
+	--- The version of the Registry Sweepers repair kit applied to the product.
+  - derived_from_identifier: ASCII_Short_String_Collapsed [0..*]
+	--- The identifier of a source product containing input data used in the creation of the described product. The source product may be within or outside the PDS4 Registry. External source products should be documented consistently with the PDS Source_Product_External class.
+  - comment: pds:comment [0..1]
+
+Systems_Lifecycle_Status --- The class Systems_Lifecycle_Status captures the current operational state of a product within the Engineering Node operational workflow. The lifecycle phase identifies where the product is in the workflow, while the lifecycle state identifies the state of activity within that phase. When systems_lifecycle_phase = release and systems_lifecycle_state = complete, the product is publicly available online.
+
+  - systems_lifecycle_phase: ASCII_Short_String_Collapsed [0..1]
+    Permissible values:
+    - preparation --- The product is being planned, generated, documented, packaged, or otherwise prepared by a data provider for submission to PDS for archive or operational handling.
+    - ingest --- The product is being transferred from a data provider to the PDS for acceptance, harvesting, loading, and registration.
+    - review --- The product is undergoing operational, technical, or approval review.
+    - staging --- The product has been prepared for release and is staged in an operational system but is not yet publicly available online.
+    - release --- The product is being prepared for or made available through an operational release workflow. When systems_lifecycle_state = complete, the product is publicly available online.
+    - offline --- The product has been taken offline and is no longer publicly available through operational systems.
+
+  - systems_lifecycle_state: ASCII_Short_String_Collapsed [0..1]
     Permissible values:
     - pending --- The lifecycle phase has not yet started.
     - in_progress --- The lifecycle phase is currently underway.
     - blocked --- The lifecycle phase cannot proceed until an issue, dependency, or decision is resolved.
     - complete --- The lifecycle phase has been completed.
     - failed --- The lifecycle phase did not complete successfully.
-    - superseded --- The product has been replaced by a newer version, successor, or operational replacement.
 
   - status_date_time: ASCII_Date_Time [0..1]
 
   - status_message: ASCII_Text_Preserved [0..1]
 
+Archive_Lifecycle_Status --- The class Archive_Lifecycle_Status captures the state of a product, collection, or bundle within the PDS archival review, preparation, and release lifecycle.
+
+  - archive_lifecycle_state: ASCII_Short_String_Collapsed [1]
+    Permissible values:
+    - not_reviewed --- The product has not yet entered the evaluation process.
+	- in_internal_review --- The product is undergoing an internal evaluation before formal peer review.
+    - in_peer_review --- The product is currently undergoing formal review for archival acceptance.
+    - in_lien_resolution --- Review has identified issues or liens that are being resolved.
+    - released --- The product has successfully completed archive evaluation and has been publicly released through the archive.
+    - rejected --- The product did not satisfy requirements for archival acceptance.
+
+  - archive_quality: ASCII_Short_String_Collapsed [0..1]
+    Permissible values:
+    - satisfactory --- The product satisfies archive quality requirements.
+    - needs_improvement --- The product requires additional work before meeting archive quality requirements.
+    - external --- The product is not intended for formal inclusion in the PDS archive and may be maintained or made available externally to the archive.
+    - undetermined --- Archive quality has not yet been determined.
+
+	- accumulating_data_flag: ASCII_Boolean [0..1]
+ 	 --- Indicates whether the product is accumulating under the PDS Policy on Accumulating Data. True indicates that data are being delivered incrementally at intervals mutually agreeable to the data provider and the PDS node. False indicates that the product was accumulating but the final increment has now been ingested. When the attribute is absent, the product is not designated as accumulating.
+
+  - archive_status_date_time: ASCII_Date_Time [1]
+    --- The date and time at which the archive status was assigned or updated.
+
+  - archive_status_message: ASCII_Text_Preserved [0..1]
+    --- Free-text notes describing archive status.
+
 Validation_Assessment --- The class Validation_Assessment captures the result of validating a product against a specified information model, schema, schematron, local data dictionary, or validation tool.
 
   - validation_state: ASCII_Short_String_Collapsed [0..1]
     Permissible values:
-    - passed --- The product or resource passed the validation assessment.
-    - failed --- The product or resource failed the validation assessment.
-    - passed_with_warnings --- The product or resource passed validation but produced one or more warnings.
-    - not_tested --- The product or resource has not been validated.
+    - passed --- The product passed the validation assessment.
+    - failed --- The product failed the validation assessment.
+    - passed_with_warnings --- The product passed validation but produced one or more warnings.
+    - not_tested --- The product has not been validated.
     - unknown --- The validation result is not known.
 
-  - validated_against_im_version: ASCII_Short_String_Collapsed [0..1]
-    The version of the information model against which the product or resource was validated.
-
-  - validated_against_ldd_version: ASCII_Short_String_Collapsed [0..*]
-    The version(s) of any local data dictionaries against which the product or resource was validated.
+  - validated_against: Validated_Against [0..*]
+   --- Identifies a PDS4 information model or local data dictionary namespace and version against which the product was validated.
 
   - validator_name: ASCII_Short_String_Collapsed [0..1]
-    The name of the validation tool, service, or application used to perform the validation assessment.
+    --- The name of the validation tool, service, or application used to perform the validation assessment.
 
   - validator_version: ASCII_Short_String_Collapsed [0..1]
-    The version of the validation tool, service, or application used to perform the validation assessment.
+    --- The version of the validation tool, service, or application used to perform the validation assessment.
 
   - validation_date_time: ASCII_Date_Time [0..1]
-    The date and time at which the validation assessment was performed.
+    --- The date and time at which the validation assessment was performed.
 
   - validation_message_text: ASCII_Text_Preserved [0..*]
-    A human-readable description of a validation result, warning, or error generated during validation.
+    --- A human-readable description of a validation result, warning, or error generated during validation.
 
   - action_required: ASCII_Boolean [0..1]
-    Indicates whether the validation assessment identified issues requiring corrective action.
+    --- Indicates whether the validation assessment identified issues requiring corrective action.
+
+Validated_Against --- The class Validated_Against identifies a PDS4 information model namespace and version used during a validation assessment.
+
+  - namespace_id: ASCII_Short_String_Collapsed [1]
+    --- The namespace identifier of the information model or local data dictionary used during validation.
+
+  - pds4_version_id: ASCII_Short_String_Collapsed [1]
+    --- The PDS4 version identifier associated with the namespace.
