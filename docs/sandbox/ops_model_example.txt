@@ -165,7 +165,7 @@ Archive_Lifecycle_Status --- The class Archive_Lifecycle_Status captures the sta
     Permissible values:
     - satisfactory --- The product satisfies archive quality requirements.
     - needs_improvement --- The product requires additional work before meeting archive quality requirements.
-    - indeterminate --- Product quality is indeterminate and is not intended for formal inclusion in the PDS archive and may be made available externally to the archive.
+    - external --- Product quality is indeterminate and is not intended for formal inclusion in the PDS archive and may be made available externally to the archive.
     - undetermined --- Archive quality has not yet been determined.
 
 	- accumulating_data_flag: ASCII_Boolean [0..1]
