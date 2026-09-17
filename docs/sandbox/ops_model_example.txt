@@ -127,7 +127,7 @@ Processing_Provenance --- The class Processing_Provenance captures Engineering N
 	--- The identifier of a source product containing input data used in the creation of the described product. The source product may be within or outside the PDS4 Registry. External source products should be documented consistently with the PDS Source_Product_External class.
   - comment: pds:comment [0..1]
 
-Systems_Lifecycle_Status --- The class Systems_Lifecycle_Status captures the current operational state of a product within the Engineering Node operational workflow. The lifecycle phase identifies where the product is in the workflow, while the lifecycle state identifies the state of activity within that phase. When systems_lifecycle_phase = release and systems_lifecycle_state = complete, the product is publicly available online.
+Systems_Lifecycle_Status --- The class Systems_Lifecycle_Status captures the current operational state of a product within the Engineering Node operational workflow. The lifecycle phase identifies where the product is in the workflow, while the lifecycle state identifies the state of activity within that phase. When systems_lifecycle_phase = available and systems_lifecycle_state = complete, the product is publicly available online.
 
   - systems_lifecycle_phase: ASCII_Short_String_Collapsed [1]
     Permissible values:
