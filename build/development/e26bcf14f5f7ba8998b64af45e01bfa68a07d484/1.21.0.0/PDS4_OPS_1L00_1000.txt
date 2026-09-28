@@ -1,0 +1,842 @@
+PDS4 Local Data Dictionary Processing Report
+
+Configuration:
+   LDDTool Version        16.1.3
+   LDD Version Id:        1.0.0.0
+   LDD Label Version Id:  1.27
+   LDD Discipline (T/F):  true
+   LDD Namespace URL:     http://pds.nasa.gov/pds4/
+   LDD URN Prefix:        urn:nasa:pds:
+   Time                   Mon Sep 28 20:11:20 UTC 2026
+   Common Schema          [PDS4_PDS_1L00.xsd]
+   Common Schematron      [PDS4_PDS_1L00.sch]
+   IM Version Id:         1.21.0.0
+   IM Namespace Id:       pds
+   IM Label Version Id:   1.27
+   IM Object Model        [UpperModel.pont]
+   IM Data Dictionary     [dd11179.pins]
+   IM Glossary            [Glossary.pins]
+   IM Document Spec       [DMDocument.pins]
+
+Parameters:
+   Input File             [/home/runner/work/ldd-ops/ldd-ops/src/PDS4_OPS_IngestLDD.xml]
+   PDS Processing         true
+   LDD Processing         true
+   Discipline LDD         true
+   Mission LDD            false
+   Write Attr Elements    false
+   Merge with Master      false
+
+Summary:
+   Classes                15
+   Attributes             50
+   Associations           71
+   Error messages         0
+   Warning messages       0
+   Information messages   0
+
+Detailed validation messages
+
+Parsed Input - Header:
+   LDD Name               Operations
+   LDD Version            1.0.0.0
+   Full Name              Sophia Conover
+   Steward                ops
+   Namespace Id           ops
+   Comment                The purpose of the Ops LDD is to define operational and supplemental metadata for PDS4 products, including file, access, processing provenance, lifecycle, validation, and usability metadata that supports registry, API, search, and delivery services but does not belong in archival product labels.
+  
+   Last Modification Time 2026-09-23T22:59:34Z
+   PDS4 Merge Flag        false
+
+Parsed Input - Attributes:
+
+   name                   producer
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The organization or entity that produced the product.
+   minimum characters     1
+   maximum characters     255
+
+   name                   steward_organization
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The top-level organization responsible for stewardship, curation, or long-term management.
+   minimum characters     1
+   maximum characters     255
+
+   name                   steward_sub_organization
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The organizational unit within the steward organization responsible for stewardship, curation, or long-term management.
+   minimum characters     1
+   maximum characters     255
+
+   name                   creation_date_time
+   version                1.21
+   value data type        ASCII_Date_Time_YMD
+   description            (Definition not provided — replace with an authored definition.)
+
+   name                   file_name
+   version                1.21
+   value data type        ASCII_File_Name
+   description            (Definition not provided — replace with an authored definition.)
+
+   name                   file_role
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Identifies whether the file is a PDS4 label or a data file.
+   minimum characters     1
+   maximum characters     255
+
+   name                   file_size
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description            (Definition not provided — replace with an authored definition.)
+
+   name                   md5_checksum
+   version                1.21
+   value data type        ASCII_MD5_Checksum
+   description            (Definition not provided — replace with an authored definition.)
+
+   name                   mime_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            (Definition not provided — replace with an authored definition.)
+   minimum characters     1
+   maximum characters     255
+
+   name                   access_uri
+   version                1.21
+   value data type        ASCII_AnyURI
+   description            (Definition not provided — replace with an authored definition.)
+
+   name                   access_available
+   version                1.21
+   value data type        ASCII_Boolean
+   description            Indicates whether the resource at this URI is currently available.
+
+   name                   authorization_required
+   version                1.21
+   value data type        ASCII_Boolean
+   description            Indicates whether authorization is required to access the resource at this URI.
+
+   name                   access_method
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            (Definition not provided — replace with an authored definition.)
+   minimum characters     1
+   maximum characters     255
+
+   name                   representation_role
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Identifies the role of this file representation in relation to the product.
+   minimum characters     1
+   maximum characters     255
+
+   name                   representation_profile
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Identifies the intended deployment purpose or optimization of this file representation.
+   minimum characters     1
+   maximum characters     255
+
+   name                   compression_algorithm
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            (Definition not provided — replace with an authored definition.)
+   minimum characters     1
+   maximum characters     255
+
+   name                   parent_bundle_identifier
+   version                1.21
+   value data type        ASCII_LID
+   description            The logical identifier of the parent bundle that contains or aggregates the product.
+
+   name                   parent_collection_identifier
+   version                1.21
+   value data type        ASCII_LID
+   description            The logical identifier of the parent collection that contains or aggregates the product.
+
+   name                   registry_membership_complete
+   version                1.21
+   value data type        ASCII_Boolean
+   description            Indicates whether all expected members of an aggregate product are present in the registry. True indicates complete membership; false indicates that one or more expected members are missing or not linked.
+
+   name                   registry_membership_evaluation_date_time
+   version                1.21
+   value data type        ASCII_Date_Time_YMD
+   description            The date and time at which registry membership completeness was last evaluated.
+
+   name                   version_status
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            (Definition not provided — replace with an authored definition.)
+   minimum characters     1
+   maximum characters     255
+
+   name                   version_status_date_time
+   version                1.21
+   value data type        ASCII_Date_Time_YMD
+   description            The date and time at which the version status was assigned or last updated.
+
+   name                   harvest_id
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The identifier assigned to the harvest activity associated with the product.
+   minimum characters     1
+   maximum characters     255
+
+   name                   harvest_date_time
+   version                1.21
+   value data type        ASCII_Date_Time_YMD
+   description            The date and time at which the product was harvested.
+
+   name                   harvest_version
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The version of the harvesting software used to harvest the product.
+   minimum characters     1
+   maximum characters     255
+
+   name                   harvest_source
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Identifies the source from which the product was harvested.
+   minimum characters     1
+   maximum characters     255
+
+   name                   harvest_job_identifier
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The identifier assigned to the harvest job that processed the product.
+   minimum characters     1
+   maximum characters     255
+
+   name                   harvest_profile_identifier
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The identifier of the harvest configuration profile used to process the product.
+   minimum characters     1
+   maximum characters     255
+
+   name                   registry_id
+   version                1.21
+   value data type        ASCII_AnyURI
+   description            The URI that identifies the product record in the registry.
+
+   name                   registry_version
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The version of the registry record associated with the product.
+   minimum characters     1
+   maximum characters     255
+
+   name                   registry_sweepers_ancestry_version
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The version of the Registry Sweepers ancestry process applied to the product.
+   minimum characters     1
+   maximum characters     255
+
+   name                   registry_sweepers_repairkit_version
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The version of the Registry Sweepers repair kit applied to the product.
+   minimum characters     1
+   maximum characters     255
+
+   name                   derived_from_identifier
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The identifier of a source product containing input data used in the creation of the described product. The source product may be within or outside the PDS4 Registry. External source products should be documented consistently with the PDS Source_Product_External class.
+   minimum characters     1
+   maximum characters     255
+
+   name                   systems_lifecycle_phase
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            (Definition not provided — replace with an authored definition.)
+   minimum characters     1
+   maximum characters     255
+
+   name                   systems_lifecycle_state
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            (Definition not provided — replace with an authored definition.)
+   minimum characters     1
+   maximum characters     255
+
+   name                   status_date_time
+   version                1.21
+   value data type        ASCII_Date_Time_YMD
+   description            (Definition not provided — replace with an authored definition.)
+
+   name                   status_message
+   version                1.21
+   value data type        ASCII_Text_Preserved
+   description            (Definition not provided — replace with an authored definition.)
+   minimum characters     1
+   maximum characters     255
+
+   name                   archive_lifecycle_state
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            (Definition not provided — replace with an authored definition.)
+   minimum characters     1
+   maximum characters     255
+
+   name                   archive_quality
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            (Definition not provided — replace with an authored definition.)
+   minimum characters     1
+   maximum characters     255
+
+   name                   accumulating_data_flag
+   version                1.21
+   value data type        ASCII_Boolean
+   description            Indicates whether the product is accumulating under the PDS Policy on Accumulating Data. True indicates that data are being delivered incrementally at intervals mutually agreeable to the data provider and the PDS node. False indicates that the product was accumulating but the final increment has now been ingested. When the attribute is absent, the product is not designated as accumulating.
+
+   name                   archive_status_date_time
+   version                1.21
+   value data type        ASCII_Date_Time_YMD
+   description            The date and time at which the archive status was assigned or updated.
+
+   name                   archive_status_message
+   version                1.21
+   value data type        ASCII_Text_Preserved
+   description            Free-text notes describing archive status.
+   minimum characters     1
+   maximum characters     255
+
+   name                   validation_state
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            (Definition not provided — replace with an authored definition.)
+   minimum characters     1
+   maximum characters     255
+
+   name                   validator_name
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The name of the validation tool, service, or application used to perform the validation assessment.
+   minimum characters     1
+   maximum characters     255
+
+   name                   validator_version
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The version of the validation tool, service, or application used to perform the validation assessment.
+   minimum characters     1
+   maximum characters     255
+
+   name                   validation_date_time
+   version                1.21
+   value data type        ASCII_Date_Time_YMD
+   description            The date and time at which the validation assessment was performed.
+
+   name                   validation_message_text
+   version                1.21
+   value data type        ASCII_Text_Preserved
+   description            A human-readable description of a validation result, warning, or error generated during validation.
+   minimum characters     1
+   maximum characters     255
+
+   name                   action_required
+   version                1.21
+   value data type        ASCII_Boolean
+   description            Indicates whether the validation assessment identified issues requiring corrective action.
+
+   name                   namespace_id
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The namespace identifier of the information model or local data dictionary used during validation.
+   minimum characters     1
+   maximum characters     255
+
+   name                   pds4_version_id
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The PDS4 version identifier associated with the namespace.
+   minimum characters     1
+   maximum characters     255
+
+Parsed Input - Classes:
+
+   name                   Operation_Metadata
+   description            The class Operation_Metadata is the top-level class for operational and supplemental metadata associated with a PDS4 product.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      ops:Stewardship_Info
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      ops:Label_File_Info
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      ops:Data_File_Info
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+      local identifier      ops:Product_Ancestry
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      ops:Version_Status
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      ops:Processing_Provenance
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      ops:Systems_Lifecycle_Status
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+      local identifier      ops:Archive_Lifecycle_Status
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+      local identifier      ops:Validation_Assessment
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+   name                   Stewardship_Info
+   description            The class Stewardship_Info describes the organizations responsible for producing and stewarding a product.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      ops:producer
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      ops:steward_organization
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      ops:steward_sub_organization
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      pds.comment
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   File_Info
+   description            The class File_Info describes deployed or operational characteristics of a PDS4 label or data file.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      ops:creation_date_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:file_name
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:file_role
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:file_size
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:md5_checksum
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:mime_type
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:Access_Info
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+   name                   Access_Info
+   description            The class Access_Info describes a URI and its access characteristics for a file. Each instance represents one URI at which the file can be accessed.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      ops:access_uri
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:access_available
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:authorization_required
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:access_method
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:representation_role
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:representation_profile
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:compression_algorithm
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      pds.comment
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Product_Ancestry
+   description            The class Product_Ancestry describes aggregation or membership relationships between a PDS4 product and its parent aggregate products.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      ops:parent_bundle_identifier
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:parent_collection_identifier
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:registry_membership_complete
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:registry_membership_evaluation_date_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      pds.comment
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Version_Status
+   description            The class Version_Status identifies the operational standing of a product version.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      ops:version_status
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:version_status_date_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      pds.comment
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Processing_Provenance
+   description            The class Processing_Provenance captures Engineering Node operational provenance generated during harvest and registry activities for a product.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      ops:harvest_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:harvest_date_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:harvest_version
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:harvest_source
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:harvest_job_identifier
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:harvest_profile_identifier
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:registry_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:registry_version
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:registry_sweepers_ancestry_version
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:registry_sweepers_repairkit_version
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:derived_from_identifier
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      pds.comment
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Systems_Lifecycle_Status
+   description            The class Systems_Lifecycle_Status captures the current operational state of a product within the Engineering Node operational workflow. The lifecycle phase identifies where the product is in the workflow, while the lifecycle state identifies the state of activity within that phase. When systems_lifecycle_phase = release and systems_lifecycle_state = complete, the product is publicly available online.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      ops:systems_lifecycle_phase
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:systems_lifecycle_state
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:status_date_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:status_message
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Archive_Lifecycle_Status
+   description            The class Archive_Lifecycle_Status captures the state of a product, collection, or bundle within the PDS archival review, preparation, and release lifecycle.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      ops:archive_lifecycle_state
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:archive_quality
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:accumulating_data_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:archive_status_date_time
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:archive_status_message
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Validation_Assessment
+   description            The class Validation_Assessment captures the result of validating a product against a specified information model, schema, schematron, local data dictionary, or validation tool.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      ops:validation_state
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:validator_name
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:validator_version
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:validation_date_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:validation_message_text
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      ops:action_required
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:Validated_Against_Core
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      ops:Validated_Against_Ldd
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+   name                   Validated_Against
+   description            The class Validated_Against identifies a PDS4 information model namespace and version used during a validation assessment.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      ops:namespace_id
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      ops:pds4_version_id
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Label_File_Info
+   description            Extension of File_Info for the label_file_info role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)
+   is abstract            false
+   is choice              false
+   subclass of            File_Info
+
+   Associations
+
+      local identifier      ops:File_Info
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        parent_of
+
+   name                   Data_File_Info
+   description            Extension of File_Info for the data_file_info role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)
+   is abstract            false
+   is choice              false
+   subclass of            File_Info
+
+   Associations
+
+      local identifier      ops:File_Info
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        parent_of
+
+   name                   Validated_Against_Core
+   description            Extension of Validated_Against for the validated_against_core role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)
+   is abstract            false
+   is choice              false
+   subclass of            Validated_Against
+
+   Associations
+
+      local identifier      ops:Validated_Against
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        parent_of
+
+   name                   Validated_Against_Ldd
+   description            Extension of Validated_Against for the validated_against_ldd role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)
+   is abstract            false
+   is choice              false
+   subclass of            Validated_Against
+
+   Associations
+
+      local identifier      ops:Validated_Against
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        parent_of
+
+End of Report
