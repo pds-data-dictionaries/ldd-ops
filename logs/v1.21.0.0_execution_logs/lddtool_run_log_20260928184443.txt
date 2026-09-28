@@ -1,0 +1,189 @@
+
+>>  INFO LDDTOOL Version: 16.1.3
+>>  INFO IM Version Id: 1.21.0.0
+>>  INFO IM Namespace Id: pds
+>>  INFO IM Label Version Id: 1.27
+>>  INFO Date: Mon Sep 28 18:44:43 UTC 2026
+>>  INFO PARENT_DIR: /tmp/lddtool-16.1.3/Data/
+
+>>> INFO Init:  - Config.Properties Namespace Id Found:ops
+>>> INFO Init:  - Config.Properties Namespace Id Using:ops
+>>> INFO Init:  - LDD Dictionary_Type is Discipline
+>>> INFO Init:  - Config.Properties Namespace Id Using:pds
+>>> INFO Init:  - LDD Dictionary_Type is Discipline
+>>> INFO Attribute: <producer> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <producer> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <steward_organization> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <steward_organization> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <steward_sub_organization> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <steward_sub_organization> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <creation_date_time> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <file_name> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <file_role> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <file_role> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <file_size> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <md5_checksum> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <md5_checksum> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <md5_checksum> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <mime_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <mime_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <access_method> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <access_method> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <representation_role> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <representation_role> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <representation_profile> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <representation_profile> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <compression_algorithm> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <compression_algorithm> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <version_status> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <version_status> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <harvest_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <harvest_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <harvest_version> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <harvest_version> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <harvest_source> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <harvest_source> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <harvest_job_identifier> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <harvest_job_identifier> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <harvest_profile_identifier> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <harvest_profile_identifier> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <registry_version> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <registry_version> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <registry_sweepers_ancestry_version> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <registry_sweepers_ancestry_version> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <registry_sweepers_repairkit_version> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <registry_sweepers_repairkit_version> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <derived_from_identifier> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <derived_from_identifier> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <systems_lifecycle_phase> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <systems_lifecycle_phase> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <systems_lifecycle_state> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <systems_lifecycle_state> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <status_message> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <status_message> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <archive_lifecycle_state> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <archive_lifecycle_state> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <archive_quality> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <archive_quality> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <archive_status_message> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <archive_status_message> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <validation_state> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <validation_state> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <validator_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <validator_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <validator_version> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <validator_version> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <validation_message_text> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <validation_message_text> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <namespace_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <namespace_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <pds4_version_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <pds4_version_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <access_method> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <access_method> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <archive_lifecycle_state> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <archive_lifecycle_state> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <archive_quality> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <archive_quality> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <archive_status_message> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <archive_status_message> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <compression_algorithm> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <compression_algorithm> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <creation_date_time> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <derived_from_identifier> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <derived_from_identifier> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <file_name> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <file_role> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <file_role> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <file_size> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <harvest_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <harvest_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <harvest_job_identifier> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <harvest_job_identifier> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <harvest_profile_identifier> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <harvest_profile_identifier> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <harvest_source> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <harvest_source> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <harvest_version> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <harvest_version> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <md5_checksum> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <md5_checksum> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <md5_checksum> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <mime_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <mime_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <namespace_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <namespace_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <pds4_version_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <pds4_version_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <producer> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <producer> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <registry_sweepers_ancestry_version> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <registry_sweepers_ancestry_version> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <registry_sweepers_repairkit_version> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <registry_sweepers_repairkit_version> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <registry_version> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <registry_version> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <representation_profile> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <representation_profile> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <representation_role> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <representation_role> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <status_message> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <status_message> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <steward_organization> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <steward_organization> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <steward_sub_organization> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <steward_sub_organization> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <systems_lifecycle_phase> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <systems_lifecycle_phase> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <systems_lifecycle_state> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <systems_lifecycle_state> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <validation_message_text> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <validation_message_text> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <validation_state> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <validation_state> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <validator_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <validator_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <validator_version> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <validator_version> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <version_status> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <version_status> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> WARNING Init:  - Config.Properties Namespace Id Not Found:example
+>>> WARNING Attribute: <mime_type> - The 'type' attribute must have at least one permissible value.
+
+ -- LDDTool Execution Summary --
+     2 warning(s)
+     0 error(s)
+     0 fatal error(s)
+
+Input:
+
+     - IM Version: 1L00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - IM Version: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): /home/runner/work/ldd-ops/ldd-ops/src/PDS4_OPS_IngestLDD.xml, /home/runner/work/ldd-ops/ldd-ops/src/PDS4_EXAMPLE_IngestLDD.xml
+
+Output:
+
+     - ./PDS4_EXAMPLE_1L00_1000.xsd
+     - ./PDS4_EXAMPLE_1L00_1000.sch
+     - ./PDS4_EXAMPLE_1L00_1000.xml
+     - ./export/PDS4_PDS_1L00.JSON
+
+>>  INFO Exit(0)
