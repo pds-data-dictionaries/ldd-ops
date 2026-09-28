@@ -1,0 +1,1473 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1P00.sch"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?><!-- PDS4 Local Data Dictionary Extended Ingest File --><!-- Generated 2026-09-23T22:59:34Z --><Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 &#10;                        http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1P00.xsd">
+
+
+  <name>Operations</name>
+  <ldd_version_id>1.0.0.0</ldd_version_id>
+  <dictionary_type>Discipline</dictionary_type>
+  <full_name>Sophia Conover</full_name>
+  <steward_id>ops</steward_id>
+  <namespace_id>ops</namespace_id>
+  <comment>The purpose of the Ops LDD is to define operational and supplemental metadata for PDS4 products, including file, access, processing provenance, lifecycle, validation, and usability metadata that supports registry, API, search, and delivery services but does not belong in archival product labels.
+  </comment>
+  <last_modification_date_time>2026-09-23T22:59:34Z</last_modification_date_time>
+
+<!-- ======= Attribute Definitions  ======= -->
+  
+  <DD_Attribute>
+    <name>producer</name>
+    <version_id>1.0</version_id>
+    <local_identifier>producer</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The organization or entity that produced the product.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>steward_organization</name>
+    <version_id>1.0</version_id>
+    <local_identifier>steward_organization</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The top-level organization responsible for stewardship, curation, or long-term management.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>steward_sub_organization</name>
+    <version_id>1.0</version_id>
+    <local_identifier>steward_sub_organization</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The organizational unit within the steward organization responsible for stewardship, curation, or long-term management.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>creation_date_time</name>
+    <version_id>1.0</version_id>
+    <local_identifier>creation_date_time</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Date_Time_YMD</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>file_name</name>
+    <version_id>1.0</version_id>
+    <local_identifier>file_name</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_File_Name</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>file_role</name>
+    <version_id>1.0</version_id>
+    <local_identifier>file_role</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Identifies whether the file is a PDS4 label or a data file.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <DD_Permissible_Value>
+        <value>label</value>
+        <value_meaning>The file is a PDS4 label file.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>data</value>
+        <value_meaning>The data file described by a PDS4 label.</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>file_size</name>
+    <version_id>1.0</version_id>
+    <local_identifier>file_size</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>md5_checksum</name>
+    <version_id>1.0</version_id>
+    <local_identifier>md5_checksum</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_MD5_Checksum</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>mime_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>mime_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>access_uri</name>
+    <version_id>1.0</version_id>
+    <local_identifier>access_uri</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_AnyURI</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>access_available</name>
+    <version_id>1.0</version_id>
+    <local_identifier>access_available</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Indicates whether the resource at this URI is currently available.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Boolean</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>authorization_required</name>
+    <version_id>1.0</version_id>
+    <local_identifier>authorization_required</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Indicates whether authorization is required to access the resource at this URI.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Boolean</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>access_method</name>
+    <version_id>1.0</version_id>
+    <local_identifier>access_method</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <DD_Permissible_Value>
+        <value>https</value>
+        <value_meaning>The URI is accessed via HTTPS.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>s3</value>
+        <value_meaning>The URI is an Amazon S3 URI or compatible object-storage URI.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>native</value>
+        <value_meaning>The URI is a native or system-local path.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>internal</value>
+        <value_meaning>The URI is intended for internal operational use only.</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>representation_role</name>
+    <version_id>1.0</version_id>
+    <local_identifier>representation_role</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Identifies the role of this file representation in relation to the product.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <DD_Permissible_Value>
+        <value>primary</value>
+        <value_meaning>The primary representation of the product.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>browse</value>
+        <value_meaning>A browse or preview representation.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>alternate</value>
+        <value_meaning>An alternate representation of the product.</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>representation_profile</name>
+    <version_id>1.0</version_id>
+    <local_identifier>representation_profile</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Identifies the intended deployment purpose or optimization of this file representation.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <DD_Permissible_Value>
+        <value>delivery</value>
+        <value_meaning>The file is optimized for user download and delivery.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>cloud-native</value>
+        <value_meaning>The file is optimized for cloud-based processing and access.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>preservation</value>
+        <value_meaning>The file is in a format suitable for long-term archival retention and is the designated preservation copy.</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>compression_algorithm</name>
+    <version_id>1.0</version_id>
+    <local_identifier>compression_algorithm</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>parent_bundle_identifier</name>
+    <version_id>1.0</version_id>
+    <local_identifier>parent_bundle_identifier</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The logical identifier of the parent bundle that contains or aggregates the product.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_LID</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>parent_collection_identifier</name>
+    <version_id>1.0</version_id>
+    <local_identifier>parent_collection_identifier</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The logical identifier of the parent collection that contains or aggregates the product.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_LID</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>registry_membership_complete</name>
+    <version_id>1.0</version_id>
+    <local_identifier>registry_membership_complete</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Indicates whether all expected members of an aggregate product are present in the registry. True indicates complete membership; false indicates that one or more expected members are missing or not linked.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Boolean</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>registry_membership_evaluation_date_time</name>
+    <version_id>1.0</version_id>
+    <local_identifier>registry_membership_evaluation_date_time</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The date and time at which registry membership completeness was last evaluated.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Date_Time_YMD</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>version_status</name>
+    <version_id>1.0</version_id>
+    <local_identifier>version_status</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <DD_Permissible_Value>
+        <value>superseded</value>
+        <value_meaning>The product version has been replaced by a later version and is no longer the current version.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>withdrawn</value>
+        <value_meaning>The product version has been withdrawn from general use or distribution.</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>version_status_date_time</name>
+    <version_id>1.0</version_id>
+    <local_identifier>version_status_date_time</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The date and time at which the version status was assigned or last updated.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Date_Time_YMD</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>harvest_id</name>
+    <version_id>1.0</version_id>
+    <local_identifier>harvest_id</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The identifier assigned to the harvest activity associated with the product.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>harvest_date_time</name>
+    <version_id>1.0</version_id>
+    <local_identifier>harvest_date_time</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The date and time at which the product was harvested.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Date_Time_YMD</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>harvest_version</name>
+    <version_id>1.0</version_id>
+    <local_identifier>harvest_version</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The version of the harvesting software used to harvest the product.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>harvest_source</name>
+    <version_id>1.0</version_id>
+    <local_identifier>harvest_source</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Identifies the source from which the product was harvested.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>harvest_job_identifier</name>
+    <version_id>1.0</version_id>
+    <local_identifier>harvest_job_identifier</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The identifier assigned to the harvest job that processed the product.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>harvest_profile_identifier</name>
+    <version_id>1.0</version_id>
+    <local_identifier>harvest_profile_identifier</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The identifier of the harvest configuration profile used to process the product.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>registry_id</name>
+    <version_id>1.0</version_id>
+    <local_identifier>registry_id</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The URI that identifies the product record in the registry.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_AnyURI</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>registry_version</name>
+    <version_id>1.0</version_id>
+    <local_identifier>registry_version</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The version of the registry record associated with the product.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>registry_sweepers_ancestry_version</name>
+    <version_id>1.0</version_id>
+    <local_identifier>registry_sweepers_ancestry_version</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The version of the Registry Sweepers ancestry process applied to the product.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>registry_sweepers_repairkit_version</name>
+    <version_id>1.0</version_id>
+    <local_identifier>registry_sweepers_repairkit_version</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The version of the Registry Sweepers repair kit applied to the product.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>derived_from_identifier</name>
+    <version_id>1.0</version_id>
+    <local_identifier>derived_from_identifier</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The identifier of a source product containing input data used in the creation of the described product. The source product may be within or outside the PDS4 Registry. External source products should be documented consistently with the PDS Source_Product_External class.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>systems_lifecycle_phase</name>
+    <version_id>1.0</version_id>
+    <local_identifier>systems_lifecycle_phase</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <DD_Permissible_Value>
+        <value>preparation</value>
+        <value_meaning>The product is being planned, generated, documented, packaged, or otherwise prepared by a data provider for submission to PDS for archive or operational handling.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>ingest</value>
+        <value_meaning>The product is being transferred from a data provider to the PDS for acceptance, harvesting, loading, and registration.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>review</value>
+        <value_meaning>The product is undergoing operational, technical, or approval review.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>staging</value>
+        <value_meaning>The product has been prepared for release and is staged in an operational system but is not yet publicly available online.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>available</value>
+        <value_meaning>The product is made available through an operational release workflow. When systems_lifecycle_state = complete, the product is publicly available online.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>offline</value>
+        <value_meaning>The product has been taken offline and is no longer publicly available through operational systems.</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>systems_lifecycle_state</name>
+    <version_id>1.0</version_id>
+    <local_identifier>systems_lifecycle_state</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <DD_Permissible_Value>
+        <value>pending</value>
+        <value_meaning>The lifecycle phase has not yet started.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>in_progress</value>
+        <value_meaning>The lifecycle phase is currently underway.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>blocked</value>
+        <value_meaning>The lifecycle phase cannot proceed until an issue, dependency, or decision is resolved.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>complete</value>
+        <value_meaning>The lifecycle phase has been completed.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>failed</value>
+        <value_meaning>The lifecycle phase did not complete successfully.</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>status_date_time</name>
+    <version_id>1.0</version_id>
+    <local_identifier>status_date_time</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Date_Time_YMD</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>status_message</name>
+    <version_id>1.0</version_id>
+    <local_identifier>status_message</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Text_Preserved</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>archive_lifecycle_state</name>
+    <version_id>1.0</version_id>
+    <local_identifier>archive_lifecycle_state</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <DD_Permissible_Value>
+        <value>not_reviewed</value>
+        <value_meaning>The product has not yet entered the evaluation process.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>in_internal_review</value>
+        <value_meaning>The product is undergoing an internal evaluation before formal peer review.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>in_peer_review</value>
+        <value_meaning>The product is currently undergoing formal review for archival acceptance.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>in_lien_resolution</value>
+        <value_meaning>Review has identified issues or liens that are being resolved.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>released</value>
+        <value_meaning>The product has successfully completed archive evaluation and has been publicly released through the archive.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>rejected</value>
+        <value_meaning>The product did not satisfy requirements for archival acceptance.</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>archive_quality</name>
+    <version_id>1.0</version_id>
+    <local_identifier>archive_quality</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <DD_Permissible_Value>
+        <value>satisfactory</value>
+        <value_meaning>The product satisfies archive quality requirements.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>needs_improvement</value>
+        <value_meaning>The product requires additional work before meeting archive quality requirements.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>external</value>
+        <value_meaning>Product quality is indeterminate and is not intended for formal inclusion in the PDS archive and may be made available externally to the archive.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>undetermined</value>
+        <value_meaning>Archive quality has not yet been determined.</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>accumulating_data_flag</name>
+    <version_id>1.0</version_id>
+    <local_identifier>accumulating_data_flag</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Indicates whether the product is accumulating under the PDS Policy on Accumulating Data. True indicates that data are being delivered incrementally at intervals mutually agreeable to the data provider and the PDS node. False indicates that the product was accumulating but the final increment has now been ingested. When the attribute is absent, the product is not designated as accumulating.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Boolean</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>archive_status_date_time</name>
+    <version_id>1.0</version_id>
+    <local_identifier>archive_status_date_time</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The date and time at which the archive status was assigned or updated.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Date_Time_YMD</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>archive_status_message</name>
+    <version_id>1.0</version_id>
+    <local_identifier>archive_status_message</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Free-text notes describing archive status.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Text_Preserved</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>validation_state</name>
+    <version_id>1.0</version_id>
+    <local_identifier>validation_state</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <DD_Permissible_Value>
+        <value>passed</value>
+        <value_meaning>The product passed the validation assessment.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>failed</value>
+        <value_meaning>The product failed the validation assessment.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>passed_with_warnings</value>
+        <value_meaning>The product passed validation but produced one or more warnings.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>not_tested</value>
+        <value_meaning>The product has not been validated.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>unknown</value>
+        <value_meaning>The validation result is not known.</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>validator_name</name>
+    <version_id>1.0</version_id>
+    <local_identifier>validator_name</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The name of the validation tool, service, or application used to perform the validation assessment.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>validator_version</name>
+    <version_id>1.0</version_id>
+    <local_identifier>validator_version</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The version of the validation tool, service, or application used to perform the validation assessment.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>validation_date_time</name>
+    <version_id>1.0</version_id>
+    <local_identifier>validation_date_time</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The date and time at which the validation assessment was performed.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Date_Time_YMD</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>validation_message_text</name>
+    <version_id>1.0</version_id>
+    <local_identifier>validation_message_text</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>A human-readable description of a validation result, warning, or error generated during validation.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Text_Preserved</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>action_required</name>
+    <version_id>1.0</version_id>
+    <local_identifier>action_required</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Indicates whether the validation assessment identified issues requiring corrective action.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Boolean</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>namespace_id</name>
+    <version_id>1.0</version_id>
+    <local_identifier>namespace_id</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The namespace identifier of the information model or local data dictionary used during validation.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>pds4_version_id</name>
+    <version_id>1.0</version_id>
+    <local_identifier>pds4_version_id</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The PDS4 version identifier associated with the namespace.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <!-- ======= Class Definitions ======= -->
+  
+  <DD_Class>
+    <name>Operation_Metadata</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Operation_Metadata</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The class Operation_Metadata is the top-level class for operational and supplemental metadata associated with a PDS4 product.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>true</element_flag>
+
+    <DD_Association>
+      <identifier_reference>Stewardship_Info</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>Label_File_Info</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>Data_File_Info</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>Product_Ancestry</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>Version_Status</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>Processing_Provenance</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>Systems_Lifecycle_Status</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>Archive_Lifecycle_Status</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>Validation_Assessment</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Stewardship_Info</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Stewardship_Info</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The class Stewardship_Info describes the organizations responsible for producing and stewarding a product.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>producer</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>steward_organization</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>steward_sub_organization</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>pds.comment</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>File_Info</name>
+    <version_id>1.0</version_id>
+    <local_identifier>File_Info</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The class File_Info describes deployed or operational characteristics of a PDS4 label or data file.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>creation_date_time</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>file_name</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>file_role</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>file_size</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>md5_checksum</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>mime_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>Access_Info</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Access_Info</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Access_Info</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The class Access_Info describes a URI and its access characteristics for a file. Each instance represents one URI at which the file can be accessed.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>access_uri</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>access_available</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>authorization_required</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>access_method</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>representation_role</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>representation_profile</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>compression_algorithm</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>pds.comment</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Product_Ancestry</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Product_Ancestry</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The class Product_Ancestry describes aggregation or membership relationships between a PDS4 product and its parent aggregate products.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>parent_bundle_identifier</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>parent_collection_identifier</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>registry_membership_complete</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>registry_membership_evaluation_date_time</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>pds.comment</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Version_Status</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Version_Status</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The class Version_Status identifies the operational standing of a product version.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>version_status</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>version_status_date_time</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>pds.comment</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Processing_Provenance</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Processing_Provenance</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The class Processing_Provenance captures Engineering Node operational provenance generated during harvest and registry activities for a product.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>harvest_id</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>harvest_date_time</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>harvest_version</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>harvest_source</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>harvest_job_identifier</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>harvest_profile_identifier</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>registry_id</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>registry_version</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>registry_sweepers_ancestry_version</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>registry_sweepers_repairkit_version</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>derived_from_identifier</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>pds.comment</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Systems_Lifecycle_Status</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Systems_Lifecycle_Status</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The class Systems_Lifecycle_Status captures the current operational state of a product within the Engineering Node operational workflow. The lifecycle phase identifies where the product is in the workflow, while the lifecycle state identifies the state of activity within that phase. When systems_lifecycle_phase = release and systems_lifecycle_state = complete, the product is publicly available online.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>systems_lifecycle_phase</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>systems_lifecycle_state</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>status_date_time</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>status_message</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Archive_Lifecycle_Status</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Archive_Lifecycle_Status</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The class Archive_Lifecycle_Status captures the state of a product, collection, or bundle within the PDS archival review, preparation, and release lifecycle.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>archive_lifecycle_state</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>archive_quality</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>accumulating_data_flag</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>archive_status_date_time</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>archive_status_message</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Validation_Assessment</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Validation_Assessment</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The class Validation_Assessment captures the result of validating a product against a specified information model, schema, schematron, local data dictionary, or validation tool.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>validation_state</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>validator_name</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>validator_version</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>validation_date_time</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>validation_message_text</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>action_required</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>Validated_Against_Core</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>Validated_Against_Ldd</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Validated_Against</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Validated_Against</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>The class Validated_Against identifies a PDS4 information model namespace and version used during a validation assessment.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>namespace_id</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+
+    <DD_Association>
+      <identifier_reference>pds4_version_id</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Label_File_Info</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Label_File_Info</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Extension of File_Info for the label_file_info role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>File_Info</identifier_reference>
+      <reference_type>parent_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Data_File_Info</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Data_File_Info</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Extension of File_Info for the data_file_info role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>File_Info</identifier_reference>
+      <reference_type>parent_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Validated_Against_Core</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Validated_Against_Core</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Extension of Validated_Against for the validated_against_core role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>Validated_Against</identifier_reference>
+      <reference_type>parent_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Validated_Against_Ldd</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Validated_Against_Ldd</local_identifier>
+    <submitter_name>Sophia Conover</submitter_name>
+    <definition>Extension of Validated_Against for the validated_against_ldd role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+
+    <DD_Association>
+      <identifier_reference>Validated_Against</identifier_reference>
+      <reference_type>parent_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+</Ingest_LDD>
