@@ -57,30 +57,6 @@
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
-    <name>creation_date_time</name>
-    <version_id>1.0</version_id>
-    <local_identifier>creation_date_time</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Date_Time_YMD</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>file_name</name>
-    <version_id>1.0</version_id>
-    <local_identifier>file_name</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_File_Name</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
     <name>file_role</name>
     <version_id>1.0</version_id>
     <local_identifier>file_role</local_identifier>
@@ -100,30 +76,6 @@
         <value>data</value>
         <value_meaning>The data file described by a PDS4 label.</value_meaning>
       </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>file_size</name>
-    <version_id>1.0</version_id>
-    <local_identifier>file_size</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_NonNegative_Integer</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>md5_checksum</name>
-    <version_id>1.0</version_id>
-    <local_identifier>md5_checksum</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_MD5_Checksum</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
@@ -326,7 +278,7 @@
     <local_identifier>version_status</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <definition>The class Version_Status optionally records that a product version has been superseded or withdrawn. This class is intended for these exceptional cases and should be omitted for current product versions.</definition>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -809,20 +761,6 @@
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
-    <name>namespace_id</name>
-    <version_id>1.0</version_id>
-    <local_identifier>namespace_id</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Sophia Conover</submitter_name>
-    <definition>The namespace identifier of the information model or local data dictionary used during validation.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <minimum_characters>1</minimum_characters>
-      <maximum_characters>255</maximum_characters>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
     <name>pds4_version_id</name>
     <version_id>1.0</version_id>
     <local_identifier>pds4_version_id</local_identifier>
@@ -957,14 +895,14 @@
     <element_flag>false</element_flag>
 
     <DD_Association>
-      <identifier_reference>creation_date_time</identifier_reference>
+      <identifier_reference>pds.creation_date_time</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
 
     <DD_Association>
-      <identifier_reference>file_name</identifier_reference>
+      <identifier_reference>pds.file_name</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -978,14 +916,14 @@
     </DD_Association>
 
     <DD_Association>
-      <identifier_reference>file_size</identifier_reference>
+      <identifier_reference>pds.file_size</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
 
     <DD_Association>
-      <identifier_reference>md5_checksum</identifier_reference>
+      <identifier_reference>pds.md5_checksum</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1242,7 +1180,7 @@
     <version_id>1.0</version_id>
     <local_identifier>Systems_Lifecycle_Status</local_identifier>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>The class Systems_Lifecycle_Status captures the current operational state of a product within the Engineering Node operational workflow. The lifecycle phase identifies where the product is in the workflow, while the lifecycle state identifies the state of activity within that phase. When systems_lifecycle_phase = release and systems_lifecycle_state = complete, the product is publicly available online.</definition>
+    <definition>The class Systems_Lifecycle_Status captures the current operational state of a product within the Engineering Node operational workflow. The lifecycle phase identifies where the product is in the workflow, while the lifecycle state identifies the state of activity within that phase. When systems_lifecycle_phase = available and systems_lifecycle_state = complete, the product is publicly available online.</definition>
     <abstract_flag>false</abstract_flag>
     <element_flag>false</element_flag>
 
@@ -1393,7 +1331,7 @@
     <element_flag>false</element_flag>
 
     <DD_Association>
-      <identifier_reference>namespace_id</identifier_reference>
+      <identifier_reference>pds.namespace_id</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1470,4 +1408,13 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
+  <DD_Rule>
+    <local_identifier>operation_metadata_not_empty</local_identifier>
+    <rule_context>//ops:Operation_Metadata</rule_context>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>count(*) &gt; 0</rule_test>
+      <rule_message>OPS:error:ops:operation_metadata_not_empty: Operation_Metadata must contain at least one child element. Omit the class when no operational metadata is provided.</rule_message>
+    </DD_Rule_Statement>
+  </DD_Rule>        
 </Ingest_LDD>
