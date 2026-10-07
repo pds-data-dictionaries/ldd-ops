@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 XML/Schema for Name Space Id:ops  Version:1.0.0.0 - Wed Oct 07 19:48:53 UTC 2026 -->
+  <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
+  <!-- *** This PDS4 product schema is an operational deliverable. *** -->
+  <!--                                                                           -->
+  <!--               Dictionary Stack                                            -->
+  <!-- 1.21.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.0.0.0 - ops: - Operations                                               -->
+  <!--                                                                           -->
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://pds.nasa.gov/pds4/ops/v1"
+    xmlns:ops="http://pds.nasa.gov/pds4/ops/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.0.0.0">
+ 
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd"/>
+ 
+  <xs:annotation>
+    <xs:documentation>
+The purpose of the Ops LDD is to define operational and supplemental metadata for PDS4 products, including file, access, processing provenance, lifecycle, validation, and usability metadata that supports registry, API, search, and delivery services but does not belong in archival product labels.
+  
+    </xs:documentation>
+  </xs:annotation>
+ 
+  <xs:element name="Operation_Metadata" type="ops:Operation_Metadata"> </xs:element>
+
+  <xs:complexType name="Access_Info">
+    <xs:annotation>
+      <xs:documentation>The class Access_Info describes a URI and its
+        access characteristics for a file. Each instance represents one
+        URI at which the file can be accessed.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="access_uri" type="ops:access_uri" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="access_available" type="ops:access_available" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="authorization_required" type="ops:authorization_required" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="access_method" type="ops:access_method" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="representation_role" type="ops:representation_role" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="representation_profile" type="ops:representation_profile" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="compression_algorithm" type="ops:compression_algorithm" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="comment" type="pds:comment" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="ops:access_method = ('https', 'internal', 'native', 's3')"/> -->
+    <!-- <xs:assert test="ops:representation_role = ('alternate', 'browse', 'primary')"/> -->
+    <!-- <xs:assert test="ops:representation_profile = ('cloud-native', 'delivery', 'preservation')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Archive_Lifecycle_Status">
+    <xs:annotation>
+      <xs:documentation>The class Archive_Lifecycle_Status captures the
+        state of a product, collection, or bundle within the PDS
+        archival review, preparation, and release
+        lifecycle.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="archive_lifecycle_state" type="ops:archive_lifecycle_state" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="archive_quality" type="ops:archive_quality" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="accumulating_data_flag" type="ops:accumulating_data_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="archive_status_date_time" type="ops:archive_status_date_time" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="archive_status_message" type="ops:archive_status_message" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="ops:archive_lifecycle_state = ('in_internal_review', 'in_lien_resolution', 'in_peer_review', 'not_reviewed', 'rejected', 'released')"/> -->
+    <!-- <xs:assert test="ops:archive_quality = ('external', 'needs_improvement', 'satisfactory', 'undetermined')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Data_File_Info">
+    <xs:annotation>
+      <xs:documentation>Extension of File_Info for the data_file_info
+        role. (Extension class auto-generated by yaml2ingestldd —
+        replace with an authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="ops:File_Info">
+        <xs:sequence>
+          <xs:element name="creation_date_time" type="pds:creation_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="file_name" type="pds:file_name" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="file_role" type="ops:file_role" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="file_size" type="pds:file_size" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="md5_checksum" type="pds:md5_checksum" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="mime_type" type="ops:mime_type" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="Access_Info" type="ops:Access_Info" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+        </xs:sequence>
+        <!-- Begin assert statements for schematron - Enumerated Values -->
+        <!-- <xs:assert test="ops:file_role = ('data', 'label')"/> -->
+        <!-- End assert statements for schematron - Enumerated Values -->
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File_Info">
+    <xs:annotation>
+      <xs:documentation>The class File_Info describes deployed or
+        operational characteristics of a PDS4 label or data
+        file.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="creation_date_time" type="pds:creation_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="file_name" type="pds:file_name" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="file_role" type="ops:file_role" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="file_size" type="pds:file_size" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="md5_checksum" type="pds:md5_checksum" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mime_type" type="ops:mime_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Access_Info" type="ops:Access_Info" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="ops:file_role = ('data', 'label')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Label_File_Info">
+    <xs:annotation>
+      <xs:documentation>Extension of File_Info for the label_file_info
+        role. (Extension class auto-generated by yaml2ingestldd —
+        replace with an authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="ops:File_Info">
+        <xs:sequence>
+          <xs:element name="creation_date_time" type="pds:creation_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="file_name" type="pds:file_name" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="file_role" type="ops:file_role" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="file_size" type="pds:file_size" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="md5_checksum" type="pds:md5_checksum" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="mime_type" type="ops:mime_type" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="Access_Info" type="ops:Access_Info" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+        </xs:sequence>
+        <!-- Begin assert statements for schematron - Enumerated Values -->
+        <!-- <xs:assert test="ops:file_role = ('data', 'label')"/> -->
+        <!-- End assert statements for schematron - Enumerated Values -->
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Operation_Metadata">
+    <xs:annotation>
+      <xs:documentation>The class Operation_Metadata is the top-level
+        class for operational and supplemental metadata associated with
+        a PDS4 product.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Stewardship_Info" type="ops:Stewardship_Info" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Label_File_Info" type="ops:Label_File_Info" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Data_File_Info" type="ops:Data_File_Info" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Product_Ancestry" type="ops:Product_Ancestry" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Version_Status" type="ops:Version_Status" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Processing_Provenance" type="ops:Processing_Provenance" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Systems_Lifecycle_Status" type="ops:Systems_Lifecycle_Status" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Archive_Lifecycle_Status" type="ops:Archive_Lifecycle_Status" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Validation_Assessment" type="ops:Validation_Assessment" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Processing_Provenance">
+    <xs:annotation>
+      <xs:documentation>The class Processing_Provenance captures
+        Engineering Node operational provenance generated during harvest
+        and registry activities for a product.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="harvest_id" type="ops:harvest_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="harvest_date_time" type="ops:harvest_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="harvest_version" type="ops:harvest_version" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="harvest_source" type="ops:harvest_source" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="harvest_job_identifier" type="ops:harvest_job_identifier" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="harvest_profile_identifier" type="ops:harvest_profile_identifier" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="registry_id" type="ops:registry_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="registry_version" type="ops:registry_version" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="registry_sweepers_ancestry_version" type="ops:registry_sweepers_ancestry_version" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="registry_sweepers_repairkit_version" type="ops:registry_sweepers_repairkit_version" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="derived_from_identifier" type="ops:derived_from_identifier" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="comment" type="pds:comment" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Product_Ancestry">
+    <xs:annotation>
+      <xs:documentation>The class Product_Ancestry describes aggregation
+        or membership relationships between a PDS4 product and its
+        parent aggregate products.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="parent_bundle_identifier" type="ops:parent_bundle_identifier" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="parent_collection_identifier" type="ops:parent_collection_identifier" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="registry_membership_complete" type="ops:registry_membership_complete" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="registry_membership_evaluation_date_time" type="ops:registry_membership_evaluation_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="comment" type="pds:comment" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Stewardship_Info">
+    <xs:annotation>
+      <xs:documentation>The class Stewardship_Info describes the
+        organizations responsible for producing and stewarding a
+        product.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="producer" type="ops:producer" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="steward_organization" type="ops:steward_organization" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="steward_sub_organization" type="ops:steward_sub_organization" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="comment" type="pds:comment" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Systems_Lifecycle_Status">
+    <xs:annotation>
+      <xs:documentation>The class Systems_Lifecycle_Status captures the
+        current operational state of a product within the Engineering
+        Node operational workflow. The lifecycle phase identifies where
+        the product is in the workflow, while the lifecycle state
+        identifies the state of activity within that phase. When
+        systems_lifecycle_phase = available and systems_lifecycle_state
+        = complete, the product is publicly available
+        online.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="systems_lifecycle_phase" type="ops:systems_lifecycle_phase" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="systems_lifecycle_state" type="ops:systems_lifecycle_state" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="status_date_time" type="ops:status_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="status_message" type="ops:status_message" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="ops:systems_lifecycle_phase = ('available', 'ingest', 'offline', 'preparation', 'review', 'staging')"/> -->
+    <!-- <xs:assert test="ops:systems_lifecycle_state = ('blocked', 'complete', 'failed', 'in_progress', 'pending')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Validated_Against">
+    <xs:annotation>
+      <xs:documentation>The class Validated_Against identifies a PDS4
+        information model namespace and version used during a validation
+        assessment.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="namespace_id" type="pds:namespace_id" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="pds4_version_id" type="ops:pds4_version_id" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Validated_Against_Core">
+    <xs:annotation>
+      <xs:documentation>Extension of Validated_Against for the
+        validated_against_core role. (Extension class auto-generated by
+        yaml2ingestldd — replace with an authored
+        definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="ops:Validated_Against">
+        <xs:sequence>
+          <xs:element name="namespace_id" type="pds:namespace_id" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="pds4_version_id" type="ops:pds4_version_id" minOccurs="1" maxOccurs="1"> </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Validated_Against_Ldd">
+    <xs:annotation>
+      <xs:documentation>Extension of Validated_Against for the
+        validated_against_ldd role. (Extension class auto-generated by
+        yaml2ingestldd — replace with an authored
+        definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="ops:Validated_Against">
+        <xs:sequence>
+          <xs:element name="namespace_id" type="pds:namespace_id" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="pds4_version_id" type="ops:pds4_version_id" minOccurs="1" maxOccurs="1"> </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Validation_Assessment">
+    <xs:annotation>
+      <xs:documentation>The class Validation_Assessment captures the
+        result of validating a product against a specified information
+        model, schema, schematron, local data dictionary, or validation
+        tool.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="validation_state" type="ops:validation_state" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="validator_name" type="ops:validator_name" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="validator_version" type="ops:validator_version" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="validation_date_time" type="ops:validation_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="validation_message_text" type="ops:validation_message_text" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="action_required" type="ops:action_required" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Validated_Against_Core" type="ops:Validated_Against_Core" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Validated_Against_Ldd" type="ops:Validated_Against_Ldd" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="ops:validation_state = ('failed', 'not_tested', 'passed', 'passed_with_warnings', 'unknown')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Version_Status">
+    <xs:annotation>
+      <xs:documentation>The class Version_Status identifies the
+        operational standing of a product version.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="version_status" type="ops:version_status" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="version_status_date_time" type="ops:version_status_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="comment" type="pds:comment" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="ops:version_status = ('superseded', 'withdrawn')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+    <xs:annotation>
+      <xs:documentation>This section contains the simpleTypes that provide more constraints
+        than those at the base data type level. The simpleTypes defined here build on the base data
+        types. This is another component of the common dictionary and therefore falls within the
+        common namespace.
+      </xs:documentation>
+    </xs:annotation>
+
+  <xs:simpleType name="access_available">
+    <xs:annotation>
+      <xs:documentation>Indicates whether the resource at this URI is
+        currently available.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Boolean">
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="access_method">
+    <xs:annotation>
+      <xs:documentation>(Definition not provided — replace with an
+        authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="access_uri">
+    <xs:annotation>
+      <xs:documentation>(Definition not provided — replace with an
+        authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_AnyURI">
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="accumulating_data_flag">
+    <xs:annotation>
+      <xs:documentation>Indicates whether the product is accumulating
+        under the PDS Policy on Accumulating Data. True indicates that
+        data are being delivered incrementally at intervals mutually
+        agreeable to the data provider and the PDS node. False indicates
+        that the product was accumulating but the final increment has
+        now been ingested. When the attribute is absent, the product is
+        not designated as accumulating.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Boolean">
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="action_required">
+    <xs:annotation>
+      <xs:documentation>Indicates whether the validation assessment
+        identified issues requiring corrective action.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Boolean">
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="archive_lifecycle_state">
+    <xs:annotation>
+      <xs:documentation>(Definition not provided — replace with an
+        authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="archive_quality">
+    <xs:annotation>
+      <xs:documentation>(Definition not provided — replace with an
+        authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="archive_status_date_time">
+    <xs:annotation>
+      <xs:documentation>The date and time at which the archive status
+        was assigned or updated.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Date_Time_YMD">
+  <!-- format="YYYY-MM-DDTHH:MM:SS.SSSSSS(Z)" -->
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="archive_status_message">
+    <xs:annotation>
+      <xs:documentation>Free-text notes describing archive
+        status.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Text_Preserved">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="authorization_required">
+    <xs:annotation>
+      <xs:documentation>Indicates whether authorization is required to
+        access the resource at this URI.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Boolean">
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="compression_algorithm">
+    <xs:annotation>
+      <xs:documentation>(Definition not provided — replace with an
+        authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="derived_from_identifier">
+    <xs:annotation>
+      <xs:documentation>The identifier of a source product containing
+        input data used in the creation of the described product. The
+        source product may be within or outside the PDS4 Registry.
+        External source products should be documented consistently with
+        the PDS Source_Product_External class.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="file_role">
+    <xs:annotation>
+      <xs:documentation>Identifies whether the file is a PDS4 label or a
+        data file.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="harvest_date_time">
+    <xs:annotation>
+      <xs:documentation>The date and time at which the product was
+        harvested.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Date_Time_YMD">
+  <!-- format="YYYY-MM-DDTHH:MM:SS.SSSSSS(Z)" -->
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="harvest_id">
+    <xs:annotation>
+      <xs:documentation>The identifier assigned to the harvest activity
+        associated with the product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="harvest_job_identifier">
+    <xs:annotation>
+      <xs:documentation>The identifier assigned to the harvest job that
+        processed the product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="harvest_profile_identifier">
+    <xs:annotation>
+      <xs:documentation>The identifier of the harvest configuration
+        profile used to process the product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="harvest_source">
+    <xs:annotation>
+      <xs:documentation>Identifies the source from which the product was
+        harvested.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="harvest_version">
+    <xs:annotation>
+      <xs:documentation>The version of the harvesting software used to
+        harvest the product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mime_type">
+    <xs:annotation>
+      <xs:documentation>(Definition not provided — replace with an
+        authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="parent_bundle_identifier">
+    <xs:annotation>
+      <xs:documentation>The logical identifier of the parent bundle that
+        contains or aggregates the product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_LID">
+  <!-- format="urn:xxx:yyy:zzzz" -->
+    	<xs:pattern value='urn(:[\p{Ll}\p{Nd}\-._]+){3,5}'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="parent_collection_identifier">
+    <xs:annotation>
+      <xs:documentation>The logical identifier of the parent collection
+        that contains or aggregates the product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_LID">
+  <!-- format="urn:xxx:yyy:zzzz" -->
+    	<xs:pattern value='urn(:[\p{Ll}\p{Nd}\-._]+){3,5}'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="pds4_version_id">
+    <xs:annotation>
+      <xs:documentation>The PDS4 version identifier associated with the
+        namespace.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="producer">
+    <xs:annotation>
+      <xs:documentation>The organization or entity that produced the
+        product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="registry_id">
+    <xs:annotation>
+      <xs:documentation>The URI that identifies the product record in
+        the registry.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_AnyURI">
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="registry_membership_complete">
+    <xs:annotation>
+      <xs:documentation>Indicates whether all expected members of an
+        aggregate product are present in the registry. True indicates
+        complete membership; false indicates that one or more expected
+        members are missing or not linked.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Boolean">
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="registry_membership_evaluation_date_time">
+    <xs:annotation>
+      <xs:documentation>The date and time at which registry membership
+        completeness was last evaluated.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Date_Time_YMD">
+  <!-- format="YYYY-MM-DDTHH:MM:SS.SSSSSS(Z)" -->
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="registry_sweepers_ancestry_version">
+    <xs:annotation>
+      <xs:documentation>The version of the Registry Sweepers ancestry
+        process applied to the product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="registry_sweepers_repairkit_version">
+    <xs:annotation>
+      <xs:documentation>The version of the Registry Sweepers repair kit
+        applied to the product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="registry_version">
+    <xs:annotation>
+      <xs:documentation>The version of the registry record associated
+        with the product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="representation_profile">
+    <xs:annotation>
+      <xs:documentation>Identifies the intended deployment purpose or
+        optimization of this file representation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="representation_role">
+    <xs:annotation>
+      <xs:documentation>Identifies the role of this file representation
+        in relation to the product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="status_date_time">
+    <xs:annotation>
+      <xs:documentation>(Definition not provided — replace with an
+        authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Date_Time_YMD">
+  <!-- format="YYYY-MM-DDTHH:MM:SS.SSSSSS(Z)" -->
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="status_message">
+    <xs:annotation>
+      <xs:documentation>(Definition not provided — replace with an
+        authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Text_Preserved">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="steward_organization">
+    <xs:annotation>
+      <xs:documentation>The top-level organization responsible for
+        stewardship, curation, or long-term
+        management.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="steward_sub_organization">
+    <xs:annotation>
+      <xs:documentation>The organizational unit within the steward
+        organization responsible for stewardship, curation, or long-term
+        management.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="systems_lifecycle_phase">
+    <xs:annotation>
+      <xs:documentation>(Definition not provided — replace with an
+        authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="systems_lifecycle_state">
+    <xs:annotation>
+      <xs:documentation>(Definition not provided — replace with an
+        authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="validation_date_time">
+    <xs:annotation>
+      <xs:documentation>The date and time at which the validation
+        assessment was performed.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Date_Time_YMD">
+  <!-- format="YYYY-MM-DDTHH:MM:SS.SSSSSS(Z)" -->
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="validation_message_text">
+    <xs:annotation>
+      <xs:documentation>A human-readable description of a validation
+        result, warning, or error generated during
+        validation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Text_Preserved">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="validation_state">
+    <xs:annotation>
+      <xs:documentation>(Definition not provided — replace with an
+        authored definition.)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="validator_name">
+    <xs:annotation>
+      <xs:documentation>The name of the validation tool, service, or
+        application used to perform the validation
+        assessment.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="validator_version">
+    <xs:annotation>
+      <xs:documentation>The version of the validation tool, service, or
+        application used to perform the validation
+        assessment.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="version_status">
+    <xs:annotation>
+      <xs:documentation>The class Version_Status optionally records that
+        a product version has been superseded or withdrawn. This class
+        is intended for these exceptional cases and should be omitted
+        for current product versions.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="version_status_date_time">
+    <xs:annotation>
+      <xs:documentation>The date and time at which the version status
+        was assigned or last updated.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Date_Time_YMD">
+  <!-- format="YYYY-MM-DDTHH:MM:SS.SSSSSS(Z)" -->
+	   </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
