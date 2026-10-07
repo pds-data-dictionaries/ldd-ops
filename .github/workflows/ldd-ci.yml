@@ -67,6 +67,12 @@ jobs:
         with:
           python-version: '3.13'
 
+      - name: Set up Java 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '25'
+
       - name: Generate LDDs
         id: generate
         uses: NASA-PDS/ldd-gen-action@main
