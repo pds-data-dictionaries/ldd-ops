@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:ops  Version:1.0.0.0 - Mon Sep 28 20:11:20 UTC 2026 -->
+  <!-- PDS4 XML/Schema for Name Space Id:ops  Version:1.0.0.0 - Wed Oct 07 19:48:53 UTC 2026 -->
   <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
@@ -78,11 +78,11 @@ The purpose of the Ops LDD is to define operational and supplemental metadata fo
     <xs:complexContent>
       <xs:restriction base="ops:File_Info">
         <xs:sequence>
-          <xs:element name="creation_date_time" type="ops:creation_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
-          <xs:element name="file_name" type="ops:file_name" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="creation_date_time" type="pds:creation_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="file_name" type="pds:file_name" minOccurs="1" maxOccurs="1"> </xs:element>
           <xs:element name="file_role" type="ops:file_role" minOccurs="1" maxOccurs="1"> </xs:element>
-          <xs:element name="file_size" type="ops:file_size" minOccurs="0" maxOccurs="1"> </xs:element>
-          <xs:element name="md5_checksum" type="ops:md5_checksum" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="file_size" type="pds:file_size" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="md5_checksum" type="pds:md5_checksum" minOccurs="0" maxOccurs="1"> </xs:element>
           <xs:element name="mime_type" type="ops:mime_type" minOccurs="0" maxOccurs="1"> </xs:element>
           <xs:element name="Access_Info" type="ops:Access_Info" minOccurs="0" maxOccurs="unbounded"> </xs:element>
         </xs:sequence>
@@ -100,11 +100,11 @@ The purpose of the Ops LDD is to define operational and supplemental metadata fo
         file.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="creation_date_time" type="ops:creation_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="file_name" type="ops:file_name" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="creation_date_time" type="pds:creation_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="file_name" type="pds:file_name" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="file_role" type="ops:file_role" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="file_size" type="ops:file_size" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="md5_checksum" type="ops:md5_checksum" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="file_size" type="pds:file_size" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="md5_checksum" type="pds:md5_checksum" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="mime_type" type="ops:mime_type" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Access_Info" type="ops:Access_Info" minOccurs="0" maxOccurs="unbounded"> </xs:element>
     </xs:sequence>
@@ -122,11 +122,11 @@ The purpose of the Ops LDD is to define operational and supplemental metadata fo
     <xs:complexContent>
       <xs:restriction base="ops:File_Info">
         <xs:sequence>
-          <xs:element name="creation_date_time" type="ops:creation_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
-          <xs:element name="file_name" type="ops:file_name" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="creation_date_time" type="pds:creation_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="file_name" type="pds:file_name" minOccurs="1" maxOccurs="1"> </xs:element>
           <xs:element name="file_role" type="ops:file_role" minOccurs="1" maxOccurs="1"> </xs:element>
-          <xs:element name="file_size" type="ops:file_size" minOccurs="0" maxOccurs="1"> </xs:element>
-          <xs:element name="md5_checksum" type="ops:md5_checksum" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="file_size" type="pds:file_size" minOccurs="0" maxOccurs="1"> </xs:element>
+          <xs:element name="md5_checksum" type="pds:md5_checksum" minOccurs="0" maxOccurs="1"> </xs:element>
           <xs:element name="mime_type" type="ops:mime_type" minOccurs="0" maxOccurs="1"> </xs:element>
           <xs:element name="Access_Info" type="ops:Access_Info" minOccurs="0" maxOccurs="unbounded"> </xs:element>
         </xs:sequence>
@@ -214,8 +214,8 @@ The purpose of the Ops LDD is to define operational and supplemental metadata fo
         Node operational workflow. The lifecycle phase identifies where
         the product is in the workflow, while the lifecycle state
         identifies the state of activity within that phase. When
-        systems_lifecycle_phase = release and systems_lifecycle_state =
-        complete, the product is publicly available
+        systems_lifecycle_phase = available and systems_lifecycle_state
+        = complete, the product is publicly available
         online.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -237,7 +237,7 @@ The purpose of the Ops LDD is to define operational and supplemental metadata fo
         assessment.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="namespace_id" type="ops:namespace_id" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="namespace_id" type="pds:namespace_id" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="pds4_version_id" type="ops:pds4_version_id" minOccurs="1" maxOccurs="1"> </xs:element>
     </xs:sequence>
   </xs:complexType>
@@ -252,7 +252,7 @@ The purpose of the Ops LDD is to define operational and supplemental metadata fo
     <xs:complexContent>
       <xs:restriction base="ops:Validated_Against">
         <xs:sequence>
-          <xs:element name="namespace_id" type="ops:namespace_id" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="namespace_id" type="pds:namespace_id" minOccurs="1" maxOccurs="1"> </xs:element>
           <xs:element name="pds4_version_id" type="ops:pds4_version_id" minOccurs="1" maxOccurs="1"> </xs:element>
         </xs:sequence>
       </xs:restriction>
@@ -269,7 +269,7 @@ The purpose of the Ops LDD is to define operational and supplemental metadata fo
     <xs:complexContent>
       <xs:restriction base="ops:Validated_Against">
         <xs:sequence>
-          <xs:element name="namespace_id" type="ops:namespace_id" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="namespace_id" type="pds:namespace_id" minOccurs="1" maxOccurs="1"> </xs:element>
           <xs:element name="pds4_version_id" type="ops:pds4_version_id" minOccurs="1" maxOccurs="1"> </xs:element>
         </xs:sequence>
       </xs:restriction>
@@ -436,16 +436,6 @@ The purpose of the Ops LDD is to define operational and supplemental metadata fo
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="creation_date_time">
-    <xs:annotation>
-      <xs:documentation>(Definition not provided — replace with an
-        authored definition.)</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Date_Time_YMD">
-  <!-- format="YYYY-MM-DDTHH:MM:SS.SSSSSS(Z)" -->
-	   </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="derived_from_identifier">
     <xs:annotation>
       <xs:documentation>The identifier of a source product containing
@@ -460,18 +450,6 @@ The purpose of the Ops LDD is to define operational and supplemental metadata fo
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="file_name">
-    <xs:annotation>
-      <xs:documentation>(Definition not provided — replace with an
-        authored definition.)</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_File_Name">
-  <!-- format="file_name.file_extension" -->
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="file_role">
     <xs:annotation>
       <xs:documentation>Identifies whether the file is a PDS4 label or a
@@ -480,18 +458,6 @@ The purpose of the Ops LDD is to define operational and supplemental metadata fo
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
      <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="file_size">
-    <xs:annotation>
-      <xs:documentation>(Definition not provided — replace with an
-        authored definition.)</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_NonNegative_Integer">
-    	<xs:pattern value='[0-9]+'/>
-     <xs:minInclusive value="0"/>
-     <xs:maxInclusive value="18446744073709551615"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -560,35 +526,10 @@ The purpose of the Ops LDD is to define operational and supplemental metadata fo
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="md5_checksum">
-    <xs:annotation>
-      <xs:documentation>(Definition not provided — replace with an
-        authored definition.)</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_MD5_Checksum">
-  <!-- format="0123456789abcdef" -->
-    	<xs:pattern value='[0-9a-fA-F]{32}'/>
-     <xs:minLength value="32"/>
-     <xs:maxLength value="32"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="mime_type">
     <xs:annotation>
       <xs:documentation>(Definition not provided — replace with an
         authored definition.)</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="namespace_id">
-    <xs:annotation>
-      <xs:documentation>The namespace identifier of the information
-        model or local data dictionary used during
-        validation.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -855,8 +796,10 @@ The purpose of the Ops LDD is to define operational and supplemental metadata fo
 
   <xs:simpleType name="version_status">
     <xs:annotation>
-      <xs:documentation>(Definition not provided — replace with an
-        authored definition.)</xs:documentation>
+      <xs:documentation>The class Version_Status optionally records that
+        a product version has been superseded or withdrawn. This class
+        is intended for these exceptional cases and should be omitted
+        for current product versions.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>

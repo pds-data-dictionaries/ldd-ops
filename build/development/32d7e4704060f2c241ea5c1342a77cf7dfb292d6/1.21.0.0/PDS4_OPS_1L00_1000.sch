@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:ops  Version:1.0.0.0 - Mon Sep 28 20:11:20 UTC 2026 -->
+  <!-- PDS4 Schematron for Name Space Id:ops  Version:1.0.0.0 - Wed Oct 07 19:48:53 UTC 2026 -->
   <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -18,6 +18,13 @@
 		   <!--        lists. These two types of rules have been -->
 		   <!--        merged together in the rules below.       -->
 		   <!-- ================================================ -->
+  <sch:pattern>
+    <sch:rule context="//ops:Operation_Metadata">
+      <sch:assert test="count(*) > 0">
+        <title>//ops:Operation_Metadata/Rule</title>
+        OPS:error:ops:operation_metadata_not_empty: Operation_Metadata must contain at least one child element. Omit the class when no operational metadata is provided.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
   <sch:pattern>
     <sch:rule context="ops:Access_Info">
       <sch:assert test="if (ops:access_available) then ops:access_available = ('true', 'false') else true()">
@@ -82,6 +89,13 @@
       <sch:assert test=". = ('data', 'label')">
         <title>ops:File_Info/ops:file_role/ops:file_role</title>
         The attribute ops:File_Info/ops:file_role must be equal to one of the following values 'data', 'label'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="ops:File_Info/ops:file_size">
+      <sch:assert test="@unit = ('byte')">
+        <title>ops:File_Info/ops:file_size/pds:file_size</title>
+        The attribute @unit must be equal to one of the following values 'byte'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Mon Sep 28 20:11:20 UTC 2026
+   Time                   Wed Oct 07 19:48:53 UTC 2026
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
@@ -29,7 +29,7 @@ Parameters:
 
 Summary:
    Classes                15
-   Attributes             50
+   Attributes             45
    Associations           71
    Error messages         0
    Warning messages       0
@@ -71,32 +71,12 @@ Parsed Input - Attributes:
    minimum characters     1
    maximum characters     255
 
-   name                   creation_date_time
-   version                1.21
-   value data type        ASCII_Date_Time_YMD
-   description            (Definition not provided — replace with an authored definition.)
-
-   name                   file_name
-   version                1.21
-   value data type        ASCII_File_Name
-   description            (Definition not provided — replace with an authored definition.)
-
    name                   file_role
    version                1.21
    value data type        ASCII_Short_String_Collapsed
    description            Identifies whether the file is a PDS4 label or a data file.
    minimum characters     1
    maximum characters     255
-
-   name                   file_size
-   version                1.21
-   value data type        ASCII_NonNegative_Integer
-   description            (Definition not provided — replace with an authored definition.)
-
-   name                   md5_checksum
-   version                1.21
-   value data type        ASCII_MD5_Checksum
-   description            (Definition not provided — replace with an authored definition.)
 
    name                   mime_type
    version                1.21
@@ -171,7 +151,7 @@ Parsed Input - Attributes:
    name                   version_status
    version                1.21
    value data type        ASCII_Short_String_Collapsed
-   description            (Definition not provided — replace with an authored definition.)
+   description            The class Version_Status optionally records that a product version has been superseded or withdrawn. This class is intended for these exceptional cases and should be omitted for current product versions.
    minimum characters     1
    maximum characters     255
 
@@ -348,13 +328,6 @@ Parsed Input - Attributes:
    value data type        ASCII_Boolean
    description            Indicates whether the validation assessment identified issues requiring corrective action.
 
-   name                   namespace_id
-   version                1.21
-   value data type        ASCII_Short_String_Collapsed
-   description            The namespace identifier of the information model or local data dictionary used during validation.
-   minimum characters     1
-   maximum characters     255
-
    name                   pds4_version_id
    version                1.21
    value data type        ASCII_Short_String_Collapsed
@@ -453,12 +426,12 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      ops:creation_date_time
+      local identifier      pds.creation_date_time
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      ops:file_name
+      local identifier      pds.file_name
       minimum occurrences   1
       maximum occurrences   1
       reference type        attribute_of
@@ -468,12 +441,12 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      ops:file_size
+      local identifier      pds.file_size
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      ops:md5_checksum
+      local identifier      pds.md5_checksum
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -661,7 +634,7 @@ Parsed Input - Classes:
       reference type        attribute_of
 
    name                   Systems_Lifecycle_Status
-   description            The class Systems_Lifecycle_Status captures the current operational state of a product within the Engineering Node operational workflow. The lifecycle phase identifies where the product is in the workflow, while the lifecycle state identifies the state of activity within that phase. When systems_lifecycle_phase = release and systems_lifecycle_state = complete, the product is publicly available online.
+   description            The class Systems_Lifecycle_Status captures the current operational state of a product within the Engineering Node operational workflow. The lifecycle phase identifies where the product is in the workflow, while the lifecycle state identifies the state of activity within that phase. When systems_lifecycle_phase = available and systems_lifecycle_state = complete, the product is publicly available online.
    is abstract            false
    is choice              false
    subclass of            USER
@@ -777,7 +750,7 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      ops:namespace_id
+      local identifier      pds.namespace_id
       minimum occurrences   1
       maximum occurrences   1
       reference type        attribute_of
