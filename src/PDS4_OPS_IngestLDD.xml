@@ -352,7 +352,7 @@
     <local_identifier>harvest_source</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>Identifies the source from which the product was harvested.</definition>
+    <definition>Identifies the source from which the product was harvested, such as the supplying node.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -1245,7 +1245,7 @@
     <DD_Association>
       <identifier_reference>archive_status_date_time</identifier_reference>
       <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
+      <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
 
