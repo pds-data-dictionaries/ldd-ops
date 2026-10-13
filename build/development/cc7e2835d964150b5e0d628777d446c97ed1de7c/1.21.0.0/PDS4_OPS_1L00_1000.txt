@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Wed Oct 07 19:48:53 UTC 2026
+   Time                   Tue Oct 13 22:09:09 UTC 2026
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
@@ -182,7 +182,7 @@ Parsed Input - Attributes:
    name                   harvest_source
    version                1.21
    value data type        ASCII_Short_String_Collapsed
-   description            Identifies the source from which the product was harvested.
+   description            Identifies the source from which the product was harvested, such as the supplying node.
    minimum characters     1
    maximum characters     255
 
@@ -685,7 +685,7 @@ Parsed Input - Classes:
       reference type        attribute_of
 
       local identifier      ops:archive_status_date_time
-      minimum occurrences   1
+      minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
