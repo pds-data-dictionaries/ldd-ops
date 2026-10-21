@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ops:Operation_Metadata xmlns:ops="http://pds.nasa.gov/pds4/ops/v1">
+    <ops:Stewardship_Info>
+        <ops:steward_sub_organization>PDS_GEO</ops:steward_sub_organization>
+    </ops:Stewardship_Info>
+    <ops:Product_Ancestry>
+        <ops:parent_collection_identifier>urn:nasa:pds:mro_sharad_simulations:data</ops:parent_collection_identifier>
+        </ops:Product_Ancestry>
+    <ops:Processing_Provenance>
+        <ops:harvest_date_time>2026-09-01T02:11:28.124051100Z</ops:harvest_date_time>
+        <ops:harvest_version>5.2.0-SNAPSHOT</ops:harvest_version>
+        <ops:harvest_source>PDS_GEO</ops:harvest_source>
+        <ops:registry_sweepers_ancestry_version>7</ops:registry_sweepers_ancestry_version>
+        <ops:registry_sweepers_repairkit_version>4</ops:registry_sweepers_repairkit_version>
+    </ops:Processing_Provenance>
+    <ops:Archive_Lifecycle_Status>
+        <ops:archive_lifecycle_state>released</ops:archive_lifecycle_state>
+    </ops:Archive_Lifecycle_Status>
+</ops:Operation_Metadata>
