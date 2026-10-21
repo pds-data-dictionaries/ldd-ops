@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue Oct 13 22:09:09 UTC 2026
+   Time                   Wed Oct 21 20:46:17 UTC 2026
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
@@ -29,7 +29,7 @@ Parameters:
 
 Summary:
    Classes                15
-   Attributes             45
+   Attributes             51
    Associations           71
    Error messages         0
    Warning messages       0
@@ -49,6 +49,46 @@ Parsed Input - Header:
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
+
+   name                   comment
+   version                1.21
+   value data type        ASCII_Text_Preserved
+   description            Remarks relevant to the operational metadata object containing this attribute.
+   minimum characters     1
+
+   name                   creation_date_time
+   version                1.21
+   value data type        ASCII_Date_Time_YMD
+   description            The date and time at which the described label or data file was created.
+
+   name                   file_name
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The name of the described label or data file.
+   minimum characters     1
+   maximum characters     255
+
+   name                   file_size
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description            The size of the described label or data file, expressed in the accompanying storage unit.
+   minimum value          0
+   maximum value          18446744073709551615
+   unit of measure type   Units_of_Storage
+
+   name                   md5_checksum
+   version                1.21
+   value data type        ASCII_MD5_Checksum
+   description            The 32-character hexadecimal MD5 checksum computed over the complete byte content of the described file.
+   minimum characters     32
+   maximum characters     32
+
+   name                   namespace_id
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The abbreviation identifying the PDS4 namespace used in the validation assessment, such as pds or ops.
+   minimum characters     1
+   maximum characters     255
 
    name                   producer
    version                1.21
@@ -81,14 +121,14 @@ Parsed Input - Attributes:
    name                   mime_type
    version                1.21
    value data type        ASCII_Short_String_Collapsed
-   description            (Definition not provided — replace with an authored definition.)
+   description            The media type of the described file, expressed as a type and subtype, such as application/xml or image/jpeg.
    minimum characters     1
    maximum characters     255
 
    name                   access_uri
    version                1.21
    value data type        ASCII_AnyURI
-   description            (Definition not provided — replace with an authored definition.)
+   description            The Uniform Resource Identifier identifying a location at which the described file can be accessed. Each Access_Info instance describes one access location.
 
    name                   access_available
    version                1.21
@@ -103,7 +143,7 @@ Parsed Input - Attributes:
    name                   access_method
    version                1.21
    value data type        ASCII_Short_String_Collapsed
-   description            (Definition not provided — replace with an authored definition.)
+   description            Identifies the protocol or access mechanism associated with access_uri, or indicates that the location is intended for internal operational use.
    minimum characters     1
    maximum characters     255
 
@@ -124,7 +164,7 @@ Parsed Input - Attributes:
    name                   compression_algorithm
    version                1.21
    value data type        ASCII_Short_String_Collapsed
-   description            (Definition not provided — replace with an authored definition.)
+   description            The compression algorithm applied to the file representation available at access_uri, such as gzip or zip.
    minimum characters     1
    maximum characters     255
 
@@ -236,40 +276,40 @@ Parsed Input - Attributes:
    name                   systems_lifecycle_phase
    version                1.21
    value data type        ASCII_Short_String_Collapsed
-   description            (Definition not provided — replace with an authored definition.)
+   description            Identifies the phase of the Engineering Node operational workflow to which the accompanying systems_lifecycle_state applies, including preparation, ingest, review, staging, availability, or offline handling.
    minimum characters     1
    maximum characters     255
 
    name                   systems_lifecycle_state
    version                1.21
    value data type        ASCII_Short_String_Collapsed
-   description            (Definition not provided — replace with an authored definition.)
+   description            Identifies the state of activity within the accompanying systems_lifecycle_phase, indicating whether the phase is pending, in progress, blocked, complete, or failed.
    minimum characters     1
    maximum characters     255
 
    name                   status_date_time
    version                1.21
    value data type        ASCII_Date_Time_YMD
-   description            (Definition not provided — replace with an authored definition.)
+   description            The date and time at which the accompanying systems lifecycle phase and state were assigned or last updated.
 
    name                   status_message
    version                1.21
    value data type        ASCII_Text_Preserved
-   description            (Definition not provided — replace with an authored definition.)
+   description            A human-readable description of the systems lifecycle status, including relevant progress, issues, dependencies, or reasons for the assigned phase and state.
    minimum characters     1
    maximum characters     255
 
    name                   archive_lifecycle_state
    version                1.21
    value data type        ASCII_Short_String_Collapsed
-   description            (Definition not provided — replace with an authored definition.)
+   description            Identifies the state of a product, collection, or bundle within the PDS archival evaluation and release process, including whether review has not begun, is underway, requires lien resolution, or has resulted in release or rejection.
    minimum characters     1
    maximum characters     255
 
    name                   archive_quality
    version                1.21
    value data type        ASCII_Short_String_Collapsed
-   description            (Definition not provided — replace with an authored definition.)
+   description            Records the assessment of a product against PDS archive quality requirements, including whether quality is satisfactory, needs improvement, is undetermined, or concerns a product intended for availability external to the formal archive.
    minimum characters     1
    maximum characters     255
 
@@ -293,7 +333,7 @@ Parsed Input - Attributes:
    name                   validation_state
    version                1.21
    value data type        ASCII_Short_String_Collapsed
-   description            (Definition not provided — replace with an authored definition.)
+   description            Records the outcome or availability of a validation assessment, indicating whether the product passed, passed with warnings, failed, has not been tested, or has an unknown result.
    minimum characters     1
    maximum characters     255
 
@@ -413,7 +453,7 @@ Parsed Input - Classes:
       maximum occurrences   *
       reference type        attribute_of
 
-      local identifier      pds.comment
+      local identifier      ops:comment
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -426,12 +466,12 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      pds.creation_date_time
+      local identifier      ops:creation_date_time
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      pds.file_name
+      local identifier      ops:file_name
       minimum occurrences   1
       maximum occurrences   1
       reference type        attribute_of
@@ -441,12 +481,12 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      pds.file_size
+      local identifier      ops:file_size
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      pds.md5_checksum
+      local identifier      ops:md5_checksum
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -504,7 +544,7 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      pds.comment
+      local identifier      ops:comment
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -537,7 +577,7 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      pds.comment
+      local identifier      ops:comment
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -560,7 +600,7 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      pds.comment
+      local identifier      ops:comment
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -628,7 +668,7 @@ Parsed Input - Classes:
       maximum occurrences   *
       reference type        attribute_of
 
-      local identifier      pds.comment
+      local identifier      ops:comment
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -737,7 +777,7 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        component_of
 
-      local identifier      ops:Validated_Against_Ldd
+      local identifier      ops:Validated_Against_LDD
       minimum occurrences   0
       maximum occurrences   *
       reference type        component_of
@@ -750,7 +790,7 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      pds.namespace_id
+      local identifier      ops:namespace_id
       minimum occurrences   1
       maximum occurrences   1
       reference type        attribute_of
@@ -761,7 +801,7 @@ Parsed Input - Classes:
       reference type        attribute_of
 
    name                   Label_File_Info
-   description            Extension of File_Info for the label_file_info role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)
+   description            The class Label_File_Info describes the operational characteristics and access locations of a PDS4 label file. It specializes File_Info for the label file associated with the product.
    is abstract            false
    is choice              false
    subclass of            File_Info
@@ -774,7 +814,7 @@ Parsed Input - Classes:
       reference type        parent_of
 
    name                   Data_File_Info
-   description            Extension of File_Info for the data_file_info role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)
+   description            The class Data_File_Info describes the operational characteristics and access locations of a data file associated with a PDS4 product. Each instance specializes File_Info for one data file.
    is abstract            false
    is choice              false
    subclass of            File_Info
@@ -787,7 +827,7 @@ Parsed Input - Classes:
       reference type        parent_of
 
    name                   Validated_Against_Core
-   description            Extension of Validated_Against for the validated_against_core role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)
+   description            The class Validated_Against_Core identifies the PDS4 core namespace and information model version used during a validation assessment. It specializes Validated_Against for the core dictionary.
    is abstract            false
    is choice              false
    subclass of            Validated_Against
@@ -799,8 +839,8 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        parent_of
 
-   name                   Validated_Against_Ldd
-   description            Extension of Validated_Against for the validated_against_ldd role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)
+   name                   Validated_Against_LDD
+   description            The class Validated_Against_LDD identifies a local data dictionary namespace and version used during a validation assessment. Each instance specializes Validated_Against for one local data dictionary.
    is abstract            false
    is choice              false
    subclass of            Validated_Against

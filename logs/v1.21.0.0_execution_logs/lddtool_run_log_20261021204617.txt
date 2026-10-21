@@ -3,12 +3,41 @@
 >>  INFO IM Version Id: 1.21.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.27
->>  INFO Date: Tue Oct 13 22:09:09 UTC 2026
+>>  INFO Date: Wed Oct 21 20:46:17 UTC 2026
 >>  INFO PARENT_DIR: /tmp/lddtool-16.1.3/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:ops
 >>> INFO Init:  - Config.Properties Namespace Id Using:ops
 >>> INFO Init:  - LDD Dictionary_Type is Discipline
+>>> INFO Attribute: <comment> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <creation_date_time> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <file_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <file_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <file_name> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <file_size> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <file_size> - The default maximum value provided by the attribute's data type is being overridden with 18446744073709551615
+>>> INFO Attribute: <file_size> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <md5_checksum> - The default minimum characters provided by the attribute's data type is being overridden with 32
+>>> INFO Attribute: <md5_checksum> - The default maximum characters provided by the attribute's data type is being overridden with 32
+>>> INFO Attribute: <md5_checksum> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <md5_checksum> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <md5_checksum> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <namespace_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <namespace_id> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <producer> - The default minimum characters provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <producer> - The default maximum characters provided by the attribute's data type is being overridden with 255
 >>> INFO Attribute: <steward_organization> - The default minimum characters provided by the attribute's data type is being overridden with 1
