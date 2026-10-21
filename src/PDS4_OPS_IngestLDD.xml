@@ -13,7 +13,90 @@
   <last_modification_date_time>2026-09-23T22:59:34Z</last_modification_date_time>
 
 <!-- ======= Attribute Definitions  ======= -->
-  
+  <DD_Attribute>
+  <name>comment</name>
+  <version_id>1.0</version_id>
+  <local_identifier>comment</local_identifier>
+  <nillable_flag>false</nillable_flag>
+  <submitter_name>Sophia Conover</submitter_name>
+  <definition>Remarks relevant to the operational metadata object containing this attribute.</definition>
+  <DD_Value_Domain>
+    <enumeration_flag>false</enumeration_flag>
+    <value_data_type>ASCII_Text_Preserved</value_data_type>
+    <minimum_characters>1</minimum_characters>
+  </DD_Value_Domain>
+</DD_Attribute>
+<DD_Attribute>
+  <name>creation_date_time</name>
+  <version_id>1.0</version_id>
+  <local_identifier>creation_date_time</local_identifier>
+  <nillable_flag>false</nillable_flag>
+  <submitter_name>Sophia Conover</submitter_name>
+  <definition>The date and time at which the described label or data file was created.</definition>
+  <DD_Value_Domain>
+    <enumeration_flag>false</enumeration_flag>
+    <value_data_type>ASCII_Date_Time_YMD</value_data_type>
+  </DD_Value_Domain>
+</DD_Attribute>
+<DD_Attribute>
+  <name>file_name</name>
+  <version_id>1.0</version_id>
+  <local_identifier>file_name</local_identifier>
+  <nillable_flag>false</nillable_flag>
+  <submitter_name>Sophia Conover</submitter_name>
+  <definition>The name of the described label or data file.</definition>
+  <DD_Value_Domain>
+    <enumeration_flag>false</enumeration_flag>
+    <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+    <minimum_characters>1</minimum_characters>
+    <maximum_characters>255</maximum_characters>
+  </DD_Value_Domain>
+</DD_Attribute>
+<DD_Attribute>
+  <name>file_size</name>
+  <version_id>1.0</version_id>
+  <local_identifier>file_size</local_identifier>
+  <nillable_flag>false</nillable_flag>
+  <submitter_name>Sophia Conover</submitter_name>
+  <definition>The size of the described label or data file, expressed in the accompanying storage unit.</definition>
+  <DD_Value_Domain>
+    <enumeration_flag>false</enumeration_flag>
+    <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+    <minimum_value>0</minimum_value>
+    <maximum_value>18446744073709551615</maximum_value>
+    <pattern>[0-9]+</pattern>
+    <unit_of_measure_type>Units_of_Storage</unit_of_measure_type>
+  </DD_Value_Domain>
+</DD_Attribute>
+<DD_Attribute>
+  <name>md5_checksum</name>
+  <version_id>1.0</version_id>
+  <local_identifier>md5_checksum</local_identifier>
+  <nillable_flag>false</nillable_flag>
+  <submitter_name>Sophia Conover</submitter_name>
+  <definition>The 32-character hexadecimal MD5 checksum computed over the complete byte content of the described file.</definition>
+  <DD_Value_Domain>
+    <enumeration_flag>false</enumeration_flag>
+    <value_data_type>ASCII_MD5_Checksum</value_data_type>
+    <minimum_characters>32</minimum_characters>
+    <maximum_characters>32</maximum_characters>
+    <pattern>[0-9a-fA-F]{32}</pattern>
+  </DD_Value_Domain>
+</DD_Attribute>
+<DD_Attribute>
+  <name>namespace_id</name>
+  <version_id>1.0</version_id>
+  <local_identifier>namespace_id</local_identifier>
+  <nillable_flag>false</nillable_flag>
+  <submitter_name>Sophia Conover</submitter_name>
+  <definition>The abbreviation identifying the PDS4 namespace used in the validation assessment, such as pds or ops.</definition>
+  <DD_Value_Domain>
+    <enumeration_flag>false</enumeration_flag>
+    <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+    <minimum_characters>1</minimum_characters>
+    <maximum_characters>255</maximum_characters>
+  </DD_Value_Domain>
+</DD_Attribute>
   <DD_Attribute>
     <name>producer</name>
     <version_id>1.0</version_id>
@@ -84,7 +167,7 @@
     <local_identifier>mime_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <definition>The media type of the described file, expressed as a type and subtype, such as application/xml or image/jpeg.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -98,7 +181,7 @@
     <local_identifier>access_uri</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <definition>The Uniform Resource Identifier identifying a location at which the described file can be accessed. Each Access_Info instance describes one access location.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_AnyURI</value_data_type>
@@ -134,7 +217,7 @@
     <local_identifier>access_method</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <definition>Identifies the protocol or access mechanism associated with access_uri, or indicates that the location is intended for internal operational use.</definition>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -216,7 +299,7 @@
     <local_identifier>compression_algorithm</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <definition>The compression algorithm applied to the file representation available at access_uri, such as gzip or zip.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -462,7 +545,7 @@
     <local_identifier>systems_lifecycle_phase</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <definition>Identifies the phase of the Engineering Node operational workflow to which the accompanying systems_lifecycle_state applies, including preparation, ingest, review, staging, availability, or offline handling.</definition>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -500,7 +583,7 @@
     <local_identifier>systems_lifecycle_state</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <definition>Identifies the state of activity within the accompanying systems_lifecycle_phase, indicating whether the phase is pending, in progress, blocked, complete, or failed.</definition>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -534,7 +617,7 @@
     <local_identifier>status_date_time</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <definition>The date and time at which the accompanying systems lifecycle phase and state were assigned or last updated.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Date_Time_YMD</value_data_type>
@@ -546,7 +629,7 @@
     <local_identifier>status_message</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <definition>A human-readable description of the systems lifecycle status, including relevant progress, issues, dependencies, or reasons for the assigned phase and state.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Text_Preserved</value_data_type>
@@ -560,7 +643,7 @@
     <local_identifier>archive_lifecycle_state</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <definition>Identifies the state of a product, collection, or bundle within the PDS archival evaluation and release process, including whether review has not begun, is underway, requires lien resolution, or has resulted in release or rejection.</definition>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -598,7 +681,7 @@
     <local_identifier>archive_quality</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <definition>Records the assessment of a product against PDS archive quality requirements, including whether quality is satisfactory, needs improvement, is undetermined, or concerns a product intended for availability external to the formal archive.</definition>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -666,7 +749,7 @@
     <local_identifier>validation_state</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>(Definition not provided — replace with an authored definition.)</definition>
+    <definition>Records the outcome or availability of a validation assessment, indicating whether the product passed, passed with warnings, failed, has not been tested, or has an unknown result.</definition>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -879,7 +962,7 @@
     </DD_Association>
 
     <DD_Association>
-      <identifier_reference>pds.comment</identifier_reference>
+      <identifier_reference>comment</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -895,14 +978,14 @@
     <element_flag>false</element_flag>
 
     <DD_Association>
-      <identifier_reference>pds.creation_date_time</identifier_reference>
+      <identifier_reference>creation_date_time</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
 
     <DD_Association>
-      <identifier_reference>pds.file_name</identifier_reference>
+      <identifier_reference>file_name</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -916,14 +999,14 @@
     </DD_Association>
 
     <DD_Association>
-      <identifier_reference>pds.file_size</identifier_reference>
+      <identifier_reference>file_size</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
 
     <DD_Association>
-      <identifier_reference>pds.md5_checksum</identifier_reference>
+      <identifier_reference>md5_checksum</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1002,7 +1085,7 @@
     </DD_Association>
 
     <DD_Association>
-      <identifier_reference>pds.comment</identifier_reference>
+      <identifier_reference>comment</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1046,7 +1129,7 @@
     </DD_Association>
 
     <DD_Association>
-      <identifier_reference>pds.comment</identifier_reference>
+      <identifier_reference>comment</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1076,7 +1159,7 @@
     </DD_Association>
 
     <DD_Association>
-      <identifier_reference>pds.comment</identifier_reference>
+      <identifier_reference>comment</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1169,7 +1252,7 @@
     </DD_Association>
 
     <DD_Association>
-      <identifier_reference>pds.comment</identifier_reference>
+      <identifier_reference>comment</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1315,7 +1398,7 @@
     </DD_Association>
 
     <DD_Association>
-      <identifier_reference>Validated_Against_Ldd</identifier_reference>
+      <identifier_reference>Validated_Against_LDD</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>*</maximum_occurrences>
@@ -1331,7 +1414,7 @@
     <element_flag>false</element_flag>
 
     <DD_Association>
-      <identifier_reference>pds.namespace_id</identifier_reference>
+      <identifier_reference>namespace_id</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1349,7 +1432,7 @@
     <version_id>1.0</version_id>
     <local_identifier>Label_File_Info</local_identifier>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>Extension of File_Info for the label_file_info role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)</definition>
+    <definition>The class Label_File_Info describes the operational characteristics and access locations of a PDS4 label file. It specializes File_Info for the label file associated with the product.</definition>
     <abstract_flag>false</abstract_flag>
     <element_flag>false</element_flag>
 
@@ -1365,7 +1448,7 @@
     <version_id>1.0</version_id>
     <local_identifier>Data_File_Info</local_identifier>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>Extension of File_Info for the data_file_info role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)</definition>
+    <definition>The class Data_File_Info describes the operational characteristics and access locations of a data file associated with a PDS4 product. Each instance specializes File_Info for one data file.</definition>
     <abstract_flag>false</abstract_flag>
     <element_flag>false</element_flag>
 
@@ -1381,7 +1464,7 @@
     <version_id>1.0</version_id>
     <local_identifier>Validated_Against_Core</local_identifier>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>Extension of Validated_Against for the validated_against_core role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)</definition>
+    <definition>The class Validated_Against_Core identifies the PDS4 core namespace and information model version used during a validation assessment. It specializes Validated_Against for the core dictionary.</definition>
     <abstract_flag>false</abstract_flag>
     <element_flag>false</element_flag>
 
@@ -1393,11 +1476,11 @@
     </DD_Association>
   </DD_Class>
   <DD_Class>
-    <name>Validated_Against_Ldd</name>
+    <name>Validated_Against_LDD</name>
     <version_id>1.0</version_id>
-    <local_identifier>Validated_Against_Ldd</local_identifier>
+    <local_identifier>Validated_Against_LDD</local_identifier>
     <submitter_name>Sophia Conover</submitter_name>
-    <definition>Extension of Validated_Against for the validated_against_ldd role. (Extension class auto-generated by yaml2ingestldd — replace with an authored definition.)</definition>
+    <definition>The class Validated_Against_LDD identifies a local data dictionary namespace and version used during a validation assessment. Each instance specializes Validated_Against for one local data dictionary.</definition>
     <abstract_flag>false</abstract_flag>
     <element_flag>false</element_flag>
 
