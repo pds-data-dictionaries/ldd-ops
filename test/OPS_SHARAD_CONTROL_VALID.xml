@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<?xml-model href="../schemas/PDS4_OPS_1L00_1000.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<Product_Context xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:ops="http://pds.nasa.gov/pds4/ops/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 ../schemas/PDS4_PDS_1L00.xsd http://pds.nasa.gov/pds4/ops/v1 ../schemas/PDS4_OPS_1L00_1000.xsd">
+
+<Product_Context xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:ops="http://pds.nasa.gov/pds4/ops/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Identification_Area>
     <logical_identifier>urn:nasa:pds:context:other:ops_sharad_control_valid</logical_identifier>
     <version_id>1.0</version_id>
     <title>OPS regression test: OPS_SHARAD_CONTROL_VALID</title>
-    <information_model_version>1.21.0.0</information_model_version>
+    <information_model_version>[IM_VERSION]</information_model_version>
     <product_class>Product_Context</product_class>
   </Identification_Area>
   <Discipline_Area>
@@ -29,6 +29,6 @@
     </ops:Operation_Metadata>
   </Discipline_Area>
   <Other>
-    <description>Synthetic context product used solely as a validation wrapper for SHARAD Operations metadata. The wrapper does not identify the original observational product.</description>
+    <description>Example product created to test the OPS LDD using SHARAD metadata.</description>
   </Other>
 </Product_Context>
