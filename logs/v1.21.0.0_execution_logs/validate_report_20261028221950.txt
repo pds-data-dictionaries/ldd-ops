@@ -1,0 +1,55 @@
+
+PDS Validate Tool Report
+
+Configuration:
+   Version      5.0.0
+   Date         2026-10-28T22:19:50Z
+   CLI args     -R pds4.label --skip-content-validation -x /home/runner/work/ldd-ops/ldd-ops/build/development/f39a8336eda70fb8105f9428470d3daf59c230d1/1.21.0.0/PDS4_OPS_1L00_1000.xsd /tmp/PDS4_PDS_1L00.xsd -S /home/runner/work/ldd-ops/ldd-ops/build/development/f39a8336eda70fb8105f9428470d3daf59c230d1/1.21.0.0/PDS4_OPS_1L00_1000.sch /tmp/PDS4_PDS_1L00.sch -t /home/runner/work/ldd-ops/ldd-ops/test//OPS_InSight_CONTROL_VALID.xml
+
+Parameters:
+   Targets                        [file:/home/runner/work/ldd-ops/ldd-ops/test/OPS_InSight_CONTROL_VALID.xml]
+   Rule Type                      pds4.label
+   User Specified Schemas         [file:/home/runner/work/ldd-ops/ldd-ops/build/development/f39a8336eda70fb8105f9428470d3daf59c230d1/1.21.0.0/PDS4_OPS_1L00_1000.xsd, file:/tmp/PDS4_PDS_1L00.xsd]
+   User Specified Schematrons     [file:/home/runner/work/ldd-ops/ldd-ops/build/development/f39a8336eda70fb8105f9428470d3daf59c230d1/1.21.0.0/PDS4_OPS_1L00_1000.sch, file:/tmp/PDS4_PDS_1L00.sch]
+   Severity Level                 WARNING
+   Recurse Directories            true
+   File Filters Used              [*.xml, *.XML]
+   Data Content Validation        off
+   Product Level Validation       on
+   Max Errors                     100000
+   Registered Contexts File       /tmp/validate-5.0.0/resources/registered_context_products.json
+
+
+
+Product Level Validation Results
+
+  PASS: file:/home/runner/work/ldd-ops/ldd-ops/test/OPS_InSight_CONTROL_VALID.xml (urn:nasa:pds:context:other:ops_insight_control_valid::1.0)
+      WARNING  [warning.label.schema]   Cannot check versioning because no Schema given.
+      WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
+        1 product validation(s) completed
+
+Summary:
+
+  1 product(s)
+  0 error(s)
+  2 warning(s)
+
+  Product Validation Summary:
+    1          product(s) passed
+    0          product(s) failed
+    0          product(s) skipped
+    1          product(s) total
+
+  Referential Integrity Check Summary:
+    0          check(s) passed
+    0          check(s) failed
+    0          check(s) skipped
+    0          check(s) total
+
+  Message Types:
+    1            warning.label.missing_schematron_spec
+    1            warning.label.schema
+
+End of Report
+Completed execution in 4770 ms
+
