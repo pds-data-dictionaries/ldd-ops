@@ -1,20 +1,35 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ops:Operation_Metadata xmlns:ops="http://pds.nasa.gov/pds4/ops/v1">
-    <ops:Stewardship_Info>
+<?xml-model href="../schemas/PDS4_OPS_1L00_1000.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Product_Context xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:ops="http://pds.nasa.gov/pds4/ops/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 ../schemas/PDS4_PDS_1L00.xsd http://pds.nasa.gov/pds4/ops/v1 ../schemas/PDS4_OPS_1L00_1000.xsd">
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:context:other:ops_insight_control_valid</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>OPS regression test: OPS_InSight_CONTROL_VALID</title>
+    <information_model_version>1.21.0.0</information_model_version>
+    <product_class>Product_Context</product_class>
+  </Identification_Area>
+  <Discipline_Area>
+    <ops:Operation_Metadata>
+      <ops:Stewardship_Info>
         <ops:steward_sub_organization>PDS_GEO</ops:steward_sub_organization>
-    </ops:Stewardship_Info>
-    <ops:Product_Ancestry>
+      </ops:Stewardship_Info>
+      <ops:Product_Ancestry>
         <ops:parent_bundle_identifier>urn:nasa:pds:insight_rad</ops:parent_bundle_identifier>
         <ops:parent_collection_identifier>urn:nasa:pds:insight_rad:data_raw</ops:parent_collection_identifier>
-    </ops:Product_Ancestry>
-    <ops:Processing_Provenance>
+      </ops:Product_Ancestry>
+      <ops:Processing_Provenance>
         <ops:harvest_date_time>2024-11-04T02:57:06.999735600Z</ops:harvest_date_time>
         <ops:harvest_version>4.0.3</ops:harvest_version>
         <ops:harvest_source>PDS_GEO</ops:harvest_source>
         <ops:registry_sweepers_ancestry_version>7</ops:registry_sweepers_ancestry_version>
         <ops:registry_sweepers_repairkit_version>4</ops:registry_sweepers_repairkit_version>
-    </ops:Processing_Provenance>
-    <ops:Archive_Lifecycle_Status>
+      </ops:Processing_Provenance>
+      <ops:Archive_Lifecycle_Status>
         <ops:archive_lifecycle_state>released</ops:archive_lifecycle_state>
-    </ops:Archive_Lifecycle_Status>
-</ops:Operation_Metadata>
+      </ops:Archive_Lifecycle_Status>
+    </ops:Operation_Metadata>
+  </Discipline_Area>
+  <Other>
+    <description>Synthetic context product used solely as a validation wrapper for InSight Operations metadata. The wrapper does not identify the original observational product.</description>
+  </Other>
+</Product_Context>
