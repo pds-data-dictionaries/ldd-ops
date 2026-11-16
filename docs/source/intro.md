@@ -1,1 +1,1 @@
-Short abstract for the namespace should go here.
+The Operations Local Data Dictionary defines and captures supplemental PDS4 metadata for registry, API, search, and delivery services.
