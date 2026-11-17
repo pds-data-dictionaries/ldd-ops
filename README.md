@@ -146,6 +146,26 @@ pip install -r requirements.txt
 
 [^1]: [Python Virtual Environment How-To at docs.python.org](https://docs.python.org/3/library/venv.html)
 
+## To Regenerate the Class Diagram Page
+
+The page `docs/source/user/class-diagram.md` (Mermaid class diagrams and the controlled values) is generated from the IngestLDD file in `src/`. Do not edit it by hand. Regenerate it, and commit the result, each time the IngestLDD XML changes.
+
+The generator is the `generate-class-diagram` skill in `.claude/skills/generate-class-diagram/`. There are two ways to run it:
+
+* **With Claude Code**, from the repository root, ask for the skill by name:
+  ```
+  /generate-class-diagram
+  ```
+  Claude runs the generator, reviews the changes to the page against the changes in the XML, and builds the documentation to check the rendering when Sphinx is installed.
+
+* **Directly**, with Python 3 and no extra dependencies:
+  ```
+  python3 -I .claude/skills/generate-class-diagram/scripts/generate_class_diagram.py
+  ```
+  Use `--src` and `--dst` to override the default input (the single `src/*IngestLDD.xml`) and output (`docs/source/user/class-diagram.md`).
+
+Then review `git diff docs/source/user/class-diagram.md`: every change should match a change in the XML. The diagrams use the `sphinxcontrib-mermaid` extension, installed with the other documentation dependencies. To change how classes are grouped into packages in the diagrams, edit `GROUPS` at the top of the script. See `.claude/skills/generate-class-diagram/SKILL.md` for details.
+
 ## To Generate HTML
 
 1. Build the HTML documents

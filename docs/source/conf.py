@@ -37,11 +37,16 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinx_rtd_theme',
     'sphinxemoji.sphinxemoji',
-    'myst_parser'
+    'myst_parser',
+    'sphinxcontrib.mermaid'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
+
+# Mermaid class-diagram namespaces (used to group the file classes) need
+# a newer Mermaid than the extension's default.
+mermaid_version = '10.9.1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

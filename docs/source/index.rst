@@ -8,3 +8,4 @@ Operations Local Data Dictionary Documentation
    :caption: User Guide
 
    user/user-guide
+   user/class-diagram
