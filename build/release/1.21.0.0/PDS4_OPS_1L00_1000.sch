@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:ops  Version:1.0.0.0 - Fri Nov 13 22:51:14 UTC 2026 -->
+  <!-- PDS4 Schematron for Name Space Id:ops  Version:1.0.0.0 - Thu Nov 19 22:34:56 UTC 2026 -->
   <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -89,13 +89,6 @@
       <sch:assert test=". = ('data', 'label')">
         <title>ops:File_Info/ops:file_role/ops:file_role</title>
         The attribute ops:File_Info/ops:file_role must be equal to one of the following values 'data', 'label'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="ops:File_Info/ops:file_size">
-      <sch:assert test="@unit = ('byte')">
-        <title>ops:File_Info/ops:file_size/ops:file_size</title>
-        The attribute @unit must be equal to one of the following values 'byte'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

@@ -3,14 +3,14 @@ PDS Validate Tool Report
 
 Configuration:
    Version      5.0.0
-   Date         2026-11-13T22:51:42Z
-   CLI args     -R pds4.label --skip-content-validation -x /home/runner/work/ldd-ops/ldd-ops/build/development/8ce6a454cc591fb5138f9bfb700803f221f90793/1.21.0.0/PDS4_OPS_1L00_1000.xsd /tmp/PDS4_PDS_1L00.xsd -S /home/runner/work/ldd-ops/ldd-ops/build/development/8ce6a454cc591fb5138f9bfb700803f221f90793/1.21.0.0/PDS4_OPS_1L00_1000.sch /tmp/PDS4_PDS_1L00.sch -t /home/runner/work/ldd-ops/ldd-ops/test//OPS_InSight_FAIL_negative_file_size.xml
+   Date         2026-11-19T22:35:29Z
+   CLI args     -R pds4.label --skip-content-validation -x /home/runner/work/ldd-ops/ldd-ops/build/development/64aef1ccb2358579b84f6072cb53a640a1248972/1.21.0.0/PDS4_OPS_1L00_1000.xsd /tmp/PDS4_PDS_1L00.xsd -S /home/runner/work/ldd-ops/ldd-ops/build/development/64aef1ccb2358579b84f6072cb53a640a1248972/1.21.0.0/PDS4_OPS_1L00_1000.sch /tmp/PDS4_PDS_1L00.sch -t /home/runner/work/ldd-ops/ldd-ops/test//OPS_InSight_FAIL_negative_file_size.xml
 
 Parameters:
    Targets                        [file:/home/runner/work/ldd-ops/ldd-ops/test/OPS_InSight_FAIL_negative_file_size.xml]
    Rule Type                      pds4.label
-   User Specified Schemas         [file:/home/runner/work/ldd-ops/ldd-ops/build/development/8ce6a454cc591fb5138f9bfb700803f221f90793/1.21.0.0/PDS4_OPS_1L00_1000.xsd, file:/tmp/PDS4_PDS_1L00.xsd]
-   User Specified Schematrons     [file:/home/runner/work/ldd-ops/ldd-ops/build/development/8ce6a454cc591fb5138f9bfb700803f221f90793/1.21.0.0/PDS4_OPS_1L00_1000.sch, file:/tmp/PDS4_PDS_1L00.sch]
+   User Specified Schemas         [file:/home/runner/work/ldd-ops/ldd-ops/build/development/64aef1ccb2358579b84f6072cb53a640a1248972/1.21.0.0/PDS4_OPS_1L00_1000.xsd, file:/tmp/PDS4_PDS_1L00.xsd]
+   User Specified Schematrons     [file:/home/runner/work/ldd-ops/ldd-ops/build/development/64aef1ccb2358579b84f6072cb53a640a1248972/1.21.0.0/PDS4_OPS_1L00_1000.sch, file:/tmp/PDS4_PDS_1L00.sch]
    Severity Level                 WARNING
    Recurse Directories            true
    File Filters Used              [*.xml, *.XML]
@@ -54,5 +54,5 @@ Summary:
     1            warning.label.schema
 
 End of Report
-Completed execution in 3572 ms
+Completed execution in 5295 ms
 
